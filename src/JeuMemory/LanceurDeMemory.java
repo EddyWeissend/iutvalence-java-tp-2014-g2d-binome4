@@ -11,6 +11,8 @@ public class LanceurDeMemory
 		System.out.println("Creation de la partie");
 		Memory partie = new Memory();
 		
+		
+		
 		System.out.println("Demarrage de la partie");
 		partie.jouer();
 		

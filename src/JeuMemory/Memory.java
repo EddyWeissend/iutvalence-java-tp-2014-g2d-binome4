@@ -7,9 +7,20 @@ package JeuMemory;
  */
 public class Memory
 {
-	private final static int NOMBRE_DE_CARTES_DU_JEU_TOTAL=30;
+	private final static int NOMBRE_DE_CARTES_DU_JEU_TOTAL=24;
 	
-	private static Plateau plateau;
+	/**
+	 * Terrain de jeu avec les cartes
+	 */
+	private Plateau plateau;
+	
+	/**
+	 * Créer un plateau avec les cartes retournées
+	 */
+	public Memory()
+	{
+		this.plateau= new Plateau();
+	}
  	/**
  	 * Permet de jouer une partie
  	 */

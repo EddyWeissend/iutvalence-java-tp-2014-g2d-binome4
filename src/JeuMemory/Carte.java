@@ -18,6 +18,8 @@ public class Carte
 	 * si elle est face cachee
 	 */
 	private boolean estRetournee = false;
+	
+	private 
 
 	/**
 	 * Retourne une carte
