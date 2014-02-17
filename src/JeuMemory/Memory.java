@@ -1,13 +1,17 @@
 package JeuMemory;
 
 /**
- * Définition du jeu Memory
+ * Définition du plateau de jeu Memory
  * @author weissene
  *
  */
 public class Memory
 {
-	public void static jouer()
+	private final static int NOMBRE_DE_CARTES_DU_JEU_TOTAL=30;
+ 	/**
+ 	 * Permet de jouer une partie
+ 	 */
+ 	public void jouer()
 	{
 		
 	}
