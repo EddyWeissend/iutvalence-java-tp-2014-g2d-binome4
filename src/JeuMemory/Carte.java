@@ -7,5 +7,17 @@ package JeuMemory;
  */
 public class Carte
 {
-
+	/**
+	 * Symbole de la carte
+	 */
+	private int SYMBOLE;
+	
+	/**
+	 * Caractérise l'état de la carte, true si la carte est face visible,
+	 * false si elle est face cachee
+	 */
+	private boolean estRetournee;
+	
+	
+	
 }
