@@ -8,6 +8,8 @@ package JeuMemory;
 public class Memory
 {
 	private final static int NOMBRE_DE_CARTES_DU_JEU_TOTAL=30;
+	
+	private static Plateau plateau;
  	/**
  	 * Permet de jouer une partie
  	 */
