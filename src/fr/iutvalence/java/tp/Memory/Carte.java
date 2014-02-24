@@ -38,6 +38,6 @@ public class Carte
 	public Carte()
 	{
 		this.estRetournee = FACE_PAR_DEFAUT;
-		this.symbole = ((Math.random() * 13)+1 //TODO à compléter
+		this.symbole = Math.floor((Math.random() * 13)+1) //TODO à compléter
 	}
 }
