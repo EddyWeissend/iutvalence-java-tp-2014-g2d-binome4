@@ -1,5 +1,4 @@
-// TODO renommer le paquetage (j'avais donné des consignes)
-package JeuMemory;
+package fr.iutvalence.java.tp.Memory;
 
 /**
  * Permet de jouer une partie de memory
@@ -8,7 +7,9 @@ package JeuMemory;
  */
 public class LanceurDeMemory
 {
-	// TODO écrire un commentaire
+	/**
+	 * Permet de lancer une partie de Memory
+	 */
 	public static void main(String[] args)
 	{
 		System.out.println("Creation de la partie");
