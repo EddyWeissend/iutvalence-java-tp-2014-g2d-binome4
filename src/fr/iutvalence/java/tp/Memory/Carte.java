@@ -38,6 +38,6 @@ public class Carte
 	public Carte()
 	{
 		this.estRetournee = FACE_PAR_DEFAUT;
-		this.symbole = (int)(Math.random() * (VALEUR_MAXIMALE-VALEUR_MINIMALE)) + VALEUR_MINIMALE;
+		this.symbole = ((Math.random() * 13)+1 //TODO à compléter
 	}
 }
