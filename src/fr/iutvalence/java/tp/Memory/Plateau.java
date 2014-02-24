@@ -54,5 +54,6 @@ public class Plateau
 	public int getNombreDeCartesPresenteSurLePlateau()
 	{
 		return this.nombreDeCartesPresenteSurLePlateau;
+		
 	}
 }
