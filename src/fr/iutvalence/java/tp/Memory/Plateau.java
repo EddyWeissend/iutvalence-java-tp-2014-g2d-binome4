@@ -30,6 +30,9 @@ public class Plateau
 	 */
 	private int nombreDeCartesPresenteSurLePlateau;
 	
+	/**
+	 * Tableau où sont stockés les cartes du jeu
+	 */
 	private Carte[][] lesCartesDuJeu;
 
 	/**
@@ -41,8 +44,7 @@ public class Plateau
 	{
 		this.nombreDeCartesPresenteSurLePlateau=NOMBRE_DE_CASES_DU_PLATEAU;
 		this.lesCartesDuJeu = new Carte[LONGUEUR][LARGEUR];
-		
-		
+				
 	}
 	
 	/**
