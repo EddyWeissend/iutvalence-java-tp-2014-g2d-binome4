@@ -2,8 +2,9 @@ package fr.iutvalence.java.tp.Memory;
 
 /**
  * Permet de jouer une partie de memory
+ * 
  * @author weissene
- *
+ * 
  */
 public class LanceurDeMemory
 {
@@ -17,7 +18,7 @@ public class LanceurDeMemory
 
 		System.out.println("Demarrage de la partie");
 		partie.jouer();
-		
+
 		System.out.println("Fin de la partie");
 	}
 }
