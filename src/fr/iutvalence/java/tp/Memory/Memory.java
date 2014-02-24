@@ -20,8 +20,9 @@ public class Memory
 	private Plateau plateau;
 
 	/**
-	 * Créer une nouvelle partie de Memory jouable : -création d'un plateau -les
-	 * cartes sont retournées et placées
+	 * Créer une nouvelle partie de Memory jouable : 
+	 * -création d'un plateau 
+	 * -les cartes sont retournées et placées
 	 * 
 	 */
 	public Memory()
