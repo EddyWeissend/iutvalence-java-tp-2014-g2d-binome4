@@ -29,13 +29,19 @@ public class Plateau
 	 * Représente le nombre de cartes présentes sur le plateau
 	 */
 	private int nombreDeCartesPresenteSurLePlateau;
+	
+	private Carte[][] lesCartesDuJeu;
 
 	/**
 	 * Création d'un plateau de jeu :
-	 * - 
+	 * - un certain de cartes retournées
+	 * -
 	 */
 	public Plateau()
 	{
+		this.nombreDeCartesPresenteSurLePlateau=NOMBRE_DE_CASES_DU_PLATEAU;
+		this.lesCartesDuJeu = new Carte[LONGUEUR][LARGEUR];
+		
 		
 	}
 	
