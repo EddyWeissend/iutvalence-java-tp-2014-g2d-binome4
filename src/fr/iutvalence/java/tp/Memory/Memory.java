@@ -12,7 +12,7 @@ public class Memory
 	/**
 	 * Le nombre de cartes du jeu
 	 */
-	private final static int NOMBRE_DE_CARTES_DU_JEU_TOTAL = 24;
+	private final static int NOMBRE_TOTAL_DE_CARTES_DU_JEU = 24;
 
 	/**
 	 * Terrain de jeu avec les cartes

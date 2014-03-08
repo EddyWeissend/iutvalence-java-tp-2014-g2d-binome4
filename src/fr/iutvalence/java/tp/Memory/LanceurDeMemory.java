@@ -8,6 +8,7 @@ package fr.iutvalence.java.tp.Memory;
  */
 public class LanceurDeMemory
 {
+	// TODO finir d'écrire le commentaire
 	/**
 	 * Permet de lancer une partie de Memory
 	 */
