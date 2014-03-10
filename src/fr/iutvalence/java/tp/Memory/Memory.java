@@ -37,4 +37,21 @@ public class Memory
 	{
 
 	}
+	
+    public String afficherPlateau()
+    {
+    	String plateauCourant="";
+    	for (int indiceColonne = 0; indiceColonne < 6; indiceColonne++)
+			for (int indiceLigne = 0; indiceLigne < 4; indiceLigne++)
+			{			
+				plateauCourant = plateauCourant + toStringCarte(this.plateau.cartes[indiceColonne][indiceLigne]);			
+		    }
+    	return plateauCourant;
+    }
+
+
+    private String toStringCarte(Carte carteCourante)
+	{
+		return Integer.toString(carteCourante.getIdentifiantCarte());
+	}
 }
