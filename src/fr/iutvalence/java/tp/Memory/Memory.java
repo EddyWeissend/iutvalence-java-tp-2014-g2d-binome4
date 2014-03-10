@@ -38,15 +38,15 @@ public class Memory
 
 	}
 	
-    public String afficherPlateau()
+    public void afficherPlateau()
     {
     	String plateauCourant="";
     	for (int indiceColonne = 0; indiceColonne < 6; indiceColonne++)
 			for (int indiceLigne = 0; indiceLigne < 4; indiceLigne++)
 			{			
-				plateauCourant = plateauCourant + toStringCarte(this.plateau.cartes[indiceColonne][indiceLigne]);			
+				plateauCourant = plateauCourant + toStringCarte(this.plateau.cartes[indiceColonne][indiceLigne]) + " ";			
 		    }
-    	return plateauCourant;
+    	System.out.println(plateauCourant);
     }
 
 

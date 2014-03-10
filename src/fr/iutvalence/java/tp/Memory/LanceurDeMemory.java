@@ -11,6 +11,7 @@ public class LanceurDeMemory
 	// TODO finir d'écrire le commentaire
 	/**
 	 * Permet de lancer une partie de Memory
+	 * et permet de la simuler
 	 */
 	public static void main(String[] args)
 	{
@@ -19,7 +20,8 @@ public class LanceurDeMemory
 
 		System.out.println("Demarrage de la partie");
 		partie.jouer();
-
+		
+		partie.afficherPlateau();
 		System.out.println("Fin de la partie");
 	}
 }

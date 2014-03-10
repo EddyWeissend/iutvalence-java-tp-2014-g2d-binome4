@@ -34,7 +34,7 @@ public class Plateau
 	/**
 	 * Tableau où sont stockées les cartes du jeu
 	 */
-	private Carte[][] cartes;
+	public Carte[][] cartes;
 
 	// TODO corriger le commentaire
 	/**
@@ -46,7 +46,7 @@ public class Plateau
 		this.nombreDeCartesPresentes = NOMBRE_DE_CASES;
 		this.cartes = new Carte[NOMBRE_DE_COLONNES][NOMBRE_DE_LIGNES];
 		this.placerCartes();
-		this.melangerCartes();
+		//this.melangerCartes();
 
 	}
 
