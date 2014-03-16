@@ -36,7 +36,6 @@ public class Plateau
 	 */
 	public Carte[][] cartes;
 
-	// TODO corriger le commentaire
 	/**
 	 * Création d'un plateau de jeu : - toutes les cartes du jeu sont retournées
 	 * -
@@ -50,6 +49,7 @@ public class Plateau
 
 	}
 
+	// TODO écrire un commentaire
 	private void placerCartes()
 	{
 		int numeroDeCarte = 1;
@@ -62,6 +62,7 @@ public class Plateau
 			}
 	}
 
+	// TODO écrire un commentaire
 	private void melangerCartes()
 	{
 		Random generateurDeNombresAleatoires = new Random();
@@ -79,6 +80,7 @@ public class Plateau
 		}
 	}
 
+	// TODO écrire un commentaire
 	/**
 	 * @return le nombre de cartes présentes sur le plateau
 	 */

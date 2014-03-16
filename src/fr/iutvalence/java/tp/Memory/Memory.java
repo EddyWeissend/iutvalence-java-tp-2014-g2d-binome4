@@ -1,5 +1,6 @@
 package fr.iutvalence.java.tp.Memory;
 
+// TODO écrire un commentaire plus précis
 /**
  * Définition des caractéristiques du Memory
  * 
@@ -38,6 +39,7 @@ public class Memory
 
 	}
 	
+	// TODO écrire un commentaire
     public void afficherPlateau()
     {
     	String plateauCourant="";
@@ -49,7 +51,8 @@ public class Memory
     	System.out.println(plateauCourant);
     }
 
-
+    // TODO déplacer cette méthode dans Carte
+	// TODO écrire un commentaire
     private String toStringCarte(Carte carteCourante)
 	{
 		return Integer.toString(carteCourante.getIdentifiantCarte());
