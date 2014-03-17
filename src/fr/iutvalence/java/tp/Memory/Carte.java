@@ -14,9 +14,8 @@ public class Carte
 	private static final boolean FACE_PAR_DEFAUT = false;
 
 	/**
-	 * Indique si la carte est retournée ou non : 
-	 *  -false si la carte est face cachée
-	 *  -true si la carte est face visible
+	 * Indique si la carte est retournée ou non : -false si la carte est face
+	 * cachée -true si la carte est face visible
 	 */
 	private boolean estFaceRetournee;
 
@@ -34,7 +33,7 @@ public class Carte
 	{
 		this.estFaceRetournee = FACE_PAR_DEFAUT;
 		this.identifiantCarte = symbole;
-	} 
+	}
 
 	// TODO écrire un commentaire
 	/**
@@ -45,12 +44,24 @@ public class Carte
 	{
 		return identifiantCarte;
 	}
-	
+
 	/**
 	 * Renvoi l'identifiant d'une carte en String
 	 */
-    public String toString()
+	public String toString()
 	{
-		return ""+this.getIdentifiantCarte();
+		return "" + this.getIdentifiantCarte();
+	}
+
+	public void retournerCarte()
+    {
+    	if this.estFaceRetournee
+    		this.estFaceRetournee=false;
+    	else this.estFaceRetournee=true;
+    }
+
+	public boolean isEstFaceRetournee()
+	{
+		return estFaceRetournee;
 	}
 }

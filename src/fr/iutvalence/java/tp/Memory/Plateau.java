@@ -120,7 +120,7 @@ public class Plateau
 	/**
 	 * renvoi la valeur de NombreDeCartesRetournee
 	 */
-	public int getNombreDeCartesRetournee()
+	public int obtenirNombreDeCartesRetournee()
 	{
 		return nombreDeCarteRetournee;
 	}
@@ -131,6 +131,16 @@ public class Plateau
 	public void setNombreDeCartesRetournee(int nombreDeCartesRetourneePendantLeTour)
 	{
 		this.nombreDeCarteRetournee = nombreDeCartesRetourneePendantLeTour;
+	}
+
+	public void enleverCarte(Carte carte)
+	{
+				
+	}
+
+	public void retournerCarte(Carte carte)
+	{
+		
 	}
 
 }

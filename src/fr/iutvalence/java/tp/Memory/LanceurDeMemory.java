@@ -1,6 +1,6 @@
 package fr.iutvalence.java.tp.Memory;
 
-/**
+/** 
  * Permet de jouer une partie de memory
  * 
  * @author weissene
