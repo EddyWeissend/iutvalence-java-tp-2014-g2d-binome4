@@ -14,18 +14,9 @@ public class Carte
 	private static final boolean FACE_PAR_DEFAUT = false;
 
 	/**
-	 * Intermédiaire pour créer un symbole aléatoire
-	 */
-	public final static int VALEUR_MINIMALE = 1;
-
-	/**
-	 * Intermédiaire pour créer un symbole aléatoire
-	 */
-	public final static int VALEUR_MAXIMALE = 13;
-
-	/**
-	 * Indique si la carte est retournée ou non : -false si la carte est face
-	 * cachée -true si la carte est face visible
+	 * Indique si la carte est retournée ou non : 
+	 *  -false si la carte est face cachée
+	 *  -true si la carte est face visible
 	 */
 	private boolean estFaceRetournee;
 
@@ -37,7 +28,7 @@ public class Carte
 
 	// TODO compléter le commentaire
 	/**
-	 * Créer une carte face cachée avec un symbole aléatoire
+	 * Créer une carte face cachée avec un identifiant passé en parametre
 	 */
 	public Carte(int symbole)
 	{
@@ -48,7 +39,7 @@ public class Carte
 	// TODO écrire un commentaire
 	/**
 	 * Renvoi l'identifiant de la carte courante
-	 * @return
+	 * 
 	 */
 	public int getIdentifiantCarte()
 	{
