@@ -46,8 +46,20 @@ public class Carte
 	}
 
 	// TODO écrire un commentaire
+	/**
+	 * Renvoi l'identifiant de la carte courante
+	 * @return
+	 */
 	public int getIdentifiantCarte()
 	{
 		return identifiantCarte;
+	}
+	
+	/**
+	 * Renvoi l'identifiant d'une carte en String
+	 */
+    private String toStringCarte(Carte carteCourante)
+	{
+		return Integer.toString(carteCourante.getIdentifiantCarte());
 	}
 }

@@ -49,7 +49,9 @@ public class Plateau
 
 	}
 
-	// TODO écrire un commentaire
+	/**
+	 * Initialise le plateau en plaçant les cartes sur le plateau
+	 */
 	private void placerCartes()
 	{
 		int numeroDeCarte = 1;
@@ -62,7 +64,9 @@ public class Plateau
 			}
 	}
 
-	// TODO écrire un commentaire
+	/**
+	 * Melange les cartes sur le plateau
+	 */
 	private void melangerCartes()
 	{
 		Random generateurDeNombresAleatoires = new Random();
@@ -82,7 +86,7 @@ public class Plateau
 
 	// TODO écrire un commentaire
 	/**
-	 * @return le nombre de cartes présentes sur le plateau
+	 * Renvoi le nombre de cartes presentes sur le plateau
 	 */
 	public int obtenirNombreDeCartesPresentes()
 	{
