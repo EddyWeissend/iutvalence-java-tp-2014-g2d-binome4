@@ -38,23 +38,16 @@ public class Memory
 	{
 
 	}
-	
-	// TODO écrire un commentaire
+    
 	/**
 	 * Affiche le plateau en mode texte sur la console
 	 */
-    public void afficherPlateau()
+    public String ObtenirRepresentationTextDuPlateau()
     {
-    	String plateauCourant="";
-    	for (int indiceColonne = 0; indiceColonne < 6; indiceColonne++)
-			for (int indiceLigne = 0; indiceLigne < 4; indiceLigne++)
-			{			
-				plateauCourant = plateauCourant + (this.plateau.cartes[indiceColonne][indiceLigne]).toString() + " ";			
-		    }
-    	System.out.println(plateauCourant);
+    	return this.plateau.toString();
     }
 
-    // TODO déplacer cette méthode dans Carte
+
 	// TODO écrire un commentaire 
 
 }

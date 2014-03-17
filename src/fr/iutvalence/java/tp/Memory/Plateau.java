@@ -34,7 +34,7 @@ public class Plateau
 	/**
 	 * Tableau où sont stockées les cartes du jeu
 	 */
-	public Carte[][] cartes;
+	private Carte[][] cartes;
 
 	/**
 	 * Création d'un plateau de jeu : - toutes les cartes du jeu sont retournées
@@ -42,10 +42,10 @@ public class Plateau
 	 */
 	public Plateau()
 	{
-		this.nombreDeCartesPresentes = NOMBRE_DE_CASES;
-		this.cartes = new Carte[NOMBRE_DE_COLONNES][NOMBRE_DE_LIGNES];
+		this.nombreDeCartesPresentes = 0;
+		this.cartes = new Carte[NOMBRE_DE_LIGNES][NOMBRE_DE_COLONNES];
 		this.placerCartes();
-		//this.melangerCartes();
+		this.melangerCartes(); 
 
 	}
 
@@ -53,13 +53,14 @@ public class Plateau
 	 * Initialise le plateau en plaçant les cartes sur le plateau
 	 */
 	private void placerCartes()
-	{ 
-		int numeroDeCarte = 1;
-		for (int indiceColonne = 0; indiceColonne < NOMBRE_DE_COLONNES; indiceColonne++)
-			for (int indiceLigne = 0; indiceLigne < NOMBRE_DE_LIGNES; indiceLigne++)
+	{
+		int numeroDeCarte = 0;
+		for (int indiceLigne = 0; indiceLigne < NOMBRE_DE_LIGNES; indiceLigne++)
+			for (int indiceColonne = 0; indiceColonne < NOMBRE_DE_COLONNES; indiceColonne++)
 			{
-				this.cartes[indiceColonne][indiceLigne] = new Carte(numeroDeCarte);
-				if ((indiceColonne + indiceLigne) % 2 == 0)
+				this.cartes[indiceLigne][indiceColonne] = new Carte(numeroDeCarte);
+				this.nombreDeCartesPresentes++;
+				if ((this.nombreDeCartesPresentes % 2) == 0)
 					numeroDeCarte++;
 			}
 	}
@@ -78,9 +79,9 @@ public class Plateau
 			int numeroDeColonneDest = generateurDeNombresAleatoires.nextInt(NOMBRE_DE_COLONNES);
 			int numeroDeLigneDest = generateurDeNombresAleatoires.nextInt(NOMBRE_DE_LIGNES);
 
-			Carte carteEchangee = this.cartes[numeroDeColonneDest][numeroDeLigneDest];
-			this.cartes[numeroDeColonneDest][numeroDeLigneDest] = this.cartes[numeroDeColonneSrc][numeroDeLigneSrc];
-			this.cartes[numeroDeColonneSrc][numeroDeLigneSrc] = carteEchangee;
+			Carte carteEchangee = this.cartes[numeroDeLigneDest][numeroDeColonneDest];
+			this.cartes[numeroDeLigneDest][numeroDeColonneDest] = this.cartes[numeroDeLigneSrc][numeroDeColonneSrc];
+			this.cartes[numeroDeLigneSrc][numeroDeColonneSrc] = carteEchangee;
 		}
 	}
 
@@ -93,4 +94,18 @@ public class Plateau
 		return this.nombreDeCartesPresentes;
 
 	}
+
+	public String toString()
+	{
+		String representationTexteDuPlateau = "";
+		for (int indiceLigne = 0; indiceLigne < NOMBRE_DE_LIGNES; indiceLigne++)
+		{
+			for (int indiceColonne = 0; indiceColonne < NOMBRE_DE_COLONNES; indiceColonne++)
+				representationTexteDuPlateau = representationTexteDuPlateau
+						+ (this.cartes[indiceLigne][indiceColonne]).toString() + "\t";
+			representationTexteDuPlateau = representationTexteDuPlateau + "\n";
+		}
+		return representationTexteDuPlateau;
+	}
+
 }

@@ -20,7 +20,7 @@ public class LanceurDeMemory
 		System.out.println("Demarrage de la partie");
 		partie.jouer();
 		
-		partie.afficherPlateau();
+		System.out.println(partie.ObtenirRepresentationTextDuPlateau());
 		System.out.println("Fin de la partie");
 	}
 }
