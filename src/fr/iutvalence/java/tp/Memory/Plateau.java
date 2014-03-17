@@ -30,6 +30,12 @@ public class Plateau
 	 * Représente le nombre de cartes présentes sur le plateau
 	 */
 	private int nombreDeCartesPresentes;
+	
+	/**
+	 * Represente le nombre de carte face visible sur le plateau
+	 */
+	private int nombreDeCarteRetournee;
+
 
 	/**
 	 * Tableau où sont stockées les cartes du jeu
@@ -50,7 +56,7 @@ public class Plateau
 	}
 
 	/**
-	 * Initialise le plateau en plaçant les cartes sur le plateau
+	 * Initialise/reinitialise le tableau des cartes en les plaçant/remplaçant
 	 */
 	private void placerCartes()
 	{
@@ -66,7 +72,7 @@ public class Plateau
 	}
 
 	/**
-	 * Melange les cartes sur le plateau
+	 * Melange les cartes du plateau
 	 */
 	private void melangerCartes()
 	{
@@ -95,6 +101,9 @@ public class Plateau
 
 	}
 
+	/**
+	 * redefinition de la methode toString qui affiche en texte le plateau
+	 */
 	public String toString()
 	{
 		String representationTexteDuPlateau = "";
@@ -106,6 +115,22 @@ public class Plateau
 			representationTexteDuPlateau = representationTexteDuPlateau + "\n";
 		}
 		return representationTexteDuPlateau;
+	}
+	
+	/**
+	 * renvoi la valeur de NombreDeCartesRetournee
+	 */
+	public int getNombreDeCartesRetournee()
+	{
+		return nombreDeCarteRetournee;
+	}
+
+	/**
+	 * permet de modifier la valeur de NombreDeCartesRetournee
+	 */
+	public void setNombreDeCartesRetournee(int nombreDeCartesRetourneePendantLeTour)
+	{
+		this.nombreDeCarteRetournee = nombreDeCartesRetourneePendantLeTour;
 	}
 
 }
