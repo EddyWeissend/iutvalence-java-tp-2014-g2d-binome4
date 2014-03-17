@@ -43,7 +43,7 @@ public class Carte
 	{
 		this.estFaceRetournee = FACE_PAR_DEFAUT;
 		this.identifiantCarte = symbole;
-	}
+	} 
 
 	// TODO écrire un commentaire
 	/**
@@ -58,8 +58,8 @@ public class Carte
 	/**
 	 * Renvoi l'identifiant d'une carte en String
 	 */
-    private String toStringCarte(Carte carteCourante)
+    public String toString()
 	{
-		return Integer.toString(carteCourante.getIdentifiantCarte());
+		return ""+this.getIdentifiantCarte();
 	}
 }

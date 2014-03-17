@@ -49,12 +49,12 @@ public class Memory
     	for (int indiceColonne = 0; indiceColonne < 6; indiceColonne++)
 			for (int indiceLigne = 0; indiceLigne < 4; indiceLigne++)
 			{			
-				plateauCourant = plateauCourant + toStringCarte(this.plateau.cartes[indiceColonne][indiceLigne]) + " ";			
+				plateauCourant = plateauCourant + (this.plateau.cartes[indiceColonne][indiceLigne]).toString() + " ";			
 		    }
     	System.out.println(plateauCourant);
     }
 
     // TODO déplacer cette méthode dans Carte
-	// TODO écrire un commentaire
+	// TODO écrire un commentaire 
 
 }

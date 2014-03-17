@@ -53,7 +53,7 @@ public class Plateau
 	 * Initialise le plateau en plaçant les cartes sur le plateau
 	 */
 	private void placerCartes()
-	{
+	{ 
 		int numeroDeCarte = 1;
 		for (int indiceColonne = 0; indiceColonne < NOMBRE_DE_COLONNES; indiceColonne++)
 			for (int indiceLigne = 0; indiceLigne < NOMBRE_DE_LIGNES; indiceLigne++)
