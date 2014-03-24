@@ -24,18 +24,19 @@ public class Plateau
 	/**
 	 * Nombre de cases du plateau
 	 */
-	private final static int NOMBRE_DE_CASES = NOMBRE_DE_COLONNES * NOMBRE_DE_LIGNES;
+
+	// private final static int NOMBRE_DE_CASES = NOMBRE_DE_COLONNES *
+	// NOMBRE_DE_LIGNES;
 
 	/**
 	 * Représente le nombre de cartes présentes sur le plateau
 	 */
 	private int nombreDeCartesPresentes;
-	
+
 	/**
 	 * Represente le nombre de carte face visible sur le plateau
 	 */
 	private int nombreDeCarteRetournee;
-
 
 	/**
 	 * Tableau où sont stockées les cartes du jeu
@@ -51,7 +52,7 @@ public class Plateau
 		this.nombreDeCartesPresentes = 0;
 		this.cartes = new Carte[NOMBRE_DE_LIGNES][NOMBRE_DE_COLONNES];
 		this.placerCartes();
-		this.melangerCartes(); 
+		this.melangerCartes();
 
 	}
 
@@ -116,13 +117,13 @@ public class Plateau
 		}
 		return representationTexteDuPlateau;
 	}
-	
+
 	/**
 	 * renvoi la valeur de NombreDeCartesRetournee
 	 */
 	public int obtenirNombreDeCartesRetournee()
 	{
-		return nombreDeCarteRetournee;
+		return this.nombreDeCarteRetournee;
 	}
 
 	/**
@@ -135,12 +136,12 @@ public class Plateau
 
 	public void enleverCarte(Carte carte)
 	{
-				
+		
 	}
 
 	public void retournerCarte(Carte carte)
 	{
-		
+
 	}
 
 }

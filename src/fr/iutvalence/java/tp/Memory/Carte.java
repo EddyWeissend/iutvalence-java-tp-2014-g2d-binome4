@@ -42,7 +42,7 @@ public class Carte
 	 */
 	public int getIdentifiantCarte()
 	{
-		return identifiantCarte;
+		return this.identifiantCarte;
 	}
 
 	/**
@@ -54,14 +54,15 @@ public class Carte
 	}
 
 	public void retournerCarte()
-    {
-    	if this.estFaceRetournee
-    		this.estFaceRetournee=false;
-    	else this.estFaceRetournee=true;
-    }
+	{
+		if (this.estFaceRetournee)
+			this.estFaceRetournee = false;
+		else
+			this.estFaceRetournee = true;
+	}
 
 	public boolean isEstFaceRetournee()
 	{
-		return estFaceRetournee;
+		return this.estFaceRetournee;
 	}
 }

@@ -35,28 +35,44 @@ public class Memory
 	 */
 	public void jouer()
 	{
-		While (this.plateau.obtenirNombreDeCartesPresentes() !=0)
+		while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 		{
-			if (this.plateau.obtenirNombreDeCartesRetournee() == 2)
-				this.finDeTour(carte1, carte2);
+			this.jouerTour();
 		}
+	}
+
+	/**
+	 * Joue un tour d'un joueur avant de passer au tour suivant
+	 * renvoi true si le tour est fini
+	 */
+	private boolean jouerTour(Joueur joueur)
+	{
+		while (jouerTourIntermediaire(joueur))
+			this.jouerTourIntermediaire(joueur);
+		return true;
 	}
 
 	/**
 	 * methode finissant le tour et demarre le prochain tour
 	 */
-	private void finDeTour(Carte carte1, Carte carte2)
+	private boolean jouerTourIntermediaire(Joueur joueur)
 	{
-		if (carte1.getIdentifiantCarte() == carte2.getIdentifiantCarte())
+		Carte [] cartesChoisiesPendantCeTourIntermediaire=joueur.choisirCartes();		
+		Carte carte1=cartesChoisiesPendantCeTourIntermediaire[0];
+		Carte carte2=cartesChoisiesPendantCeTourIntermediaire[1];
+		this.plateau.retournerCarte(carte1);
+		this.plateau.retournerCarte(carte2);
+		if (carte1.getIdentifiantCarte() == carte2.getIdentifiantCarte())	
 		{
 			this.plateau.enleverCarte(carte1);
 			this.plateau.enleverCarte(carte2);
+			joueur.incrementerNombreDePairesTrouvees();
+			return true;
 		}
-		else
-		{
-			this.plateau.retournerCarte(carte1);
-			this.plateau.retournerCarte(carte2);
-		}
+
+		this.plateau.retournerCarte(carte1);
+		this.plateau.retournerCarte(carte2);
+		return false;
 
 	}
 
@@ -67,7 +83,5 @@ public class Memory
 	{
 		return this.plateau.toString();
 	}
-
-	// TODO écrire un commentaire
 
 }
