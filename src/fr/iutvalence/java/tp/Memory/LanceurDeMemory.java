@@ -17,9 +17,8 @@ public class LanceurDeMemory
 		Memory partie = new Memory();
 		Joueur joueur1 = new Joueur("Pierre");
 		Joueur joueur2 = new Joueur("Eddy Malou");
-		
 		System.out.println("Demarrage de la partie");
-		partie.jouer();
+		partie.jouer(joueur1, joueur2);
 
 		System.out.println(partie.ObtenirRepresentationTextDuPlateau());
 		System.out.println("Fin de la partie");

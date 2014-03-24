@@ -21,11 +21,14 @@ public class Joueur
 		this.nombreDePairesTrouvees=0;
 	}
 
-	public Carte [] choisirCartes()
+	/**
+	 * Retourne les cartes choisies par le joueur
+	 */
+	public Position [] choisirCartes()
 	{
-//		Carte [] cartesChoisies;
-//		cartesChoises[0]=
-//  	cartesChoises[1]=		
+		Position [] cartesChoisies;
+		cartesChoisies[0]=
+    	cartesChoisies[1]=		
 		return null;
 		
 	}

@@ -133,6 +133,8 @@ public class Plateau
 	{
 		this.nombreDeCarteRetournee = nombreDeCartesRetourneePendantLeTour;
 	}
+	
+	
 
 	public void enleverCarte(Carte carte)
 	{
@@ -141,7 +143,7 @@ public class Plateau
 
 	public void retournerCarte(Carte carte)
 	{
-
+		
 	}
 
 }

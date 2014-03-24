@@ -33,11 +33,16 @@ public class Memory
 	/**
 	 * Joue une partie de Memory
 	 */
-	public void jouer()
+	public void jouer(Joueur joueur1, Joueur joueur2)
 	{
 		while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 		{
-			this.jouerTour();
+			while (this.jouerTour(joueur1))
+				this.jouerTour(joueur1);
+			if (this.plateau.obtenirNombreDeCartesPresentes() == 0)
+				break;
+			while (this.jouerTour(joueur2))
+				this.jouerTour(joueur2);
 		}
 	}
 
@@ -57,7 +62,7 @@ public class Memory
 	 */
 	private boolean jouerTourIntermediaire(Joueur joueur)
 	{
-		Carte [] cartesChoisiesPendantCeTourIntermediaire=joueur.choisirCartes();		
+		Carte [] cartesChoisiesPendantCeTourIntermediaire=joueur.choisirCartes(this.plateau.NOMBRE_DE_LIGNES,this.plateau.NOMBRE_DE_COLONNES);		
 		Carte carte1=cartesChoisiesPendantCeTourIntermediaire[0];
 		Carte carte2=cartesChoisiesPendantCeTourIntermediaire[1];
 		this.plateau.retournerCarte(carte1);
