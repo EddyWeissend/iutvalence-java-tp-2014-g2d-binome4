@@ -14,13 +14,10 @@ public class LanceurDeMemory
 	public static void main(String[] args)
 	{
 		System.out.println("Creation de la partie");
-		Memory partie = new Memory();
-		Joueur joueur1 = new Joueur("Pierre");
-		Joueur joueur2 = new Joueur("Eddy Malou");
+		Memory partie = new Memory("Pierre","Eddy Malou");
 		System.out.println("Demarrage de la partie");
-		partie.jouer(joueur1, joueur2);
-
-		System.out.println(partie.ObtenirRepresentationTextDuPlateau());
+		//partie.jouer();
+		System.out.println(partie.toString());
 		System.out.println("Fin de la partie");
 	}
 }

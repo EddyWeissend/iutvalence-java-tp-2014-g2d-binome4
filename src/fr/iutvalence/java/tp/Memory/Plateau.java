@@ -34,11 +34,6 @@ public class Plateau
 	private int nombreDeCartesPresentes;
 
 	/**
-	 * Represente le nombre de carte face visible sur le plateau
-	 */
-	private int nombreDeCarteRetournee;
-
-	/**
 	 * Tableau où sont stockées les cartes du jeu
 	 */
 	private Carte[][] cartes;
@@ -119,31 +114,33 @@ public class Plateau
 	}
 
 	/**
-	 * renvoi la valeur de NombreDeCartesRetournee
+	 * Enlève la carte du jeu a la position passée en paramètre
 	 */
-	public int obtenirNombreDeCartesRetournee()
+	public void enleverCarte(Position carte)
 	{
-		return this.nombreDeCarteRetournee;
+		this.cartes[carte.getIndiceLigne()][carte.getIndiceColonne()].enleverCarte();
 	}
 
 	/**
-	 * permet de modifier la valeur de NombreDeCartesRetournee
+	 * Retournes la carte du jeu a la position passée en paramètre
 	 */
-	public void setNombreDeCartesRetournee(int nombreDeCartesRetourneePendantLeTour)
-	{
-		this.nombreDeCarteRetournee = nombreDeCartesRetourneePendantLeTour;
-	}
-	
-	
-
-	public void enleverCarte(Carte carte)
+	public void retournerCarte(Position carte)
 	{
 		
 	}
-
-	public void retournerCarte(Carte carte)
+	
+	/**
+	 * Renvoi l'identifiant de la carte a la position passée en paramètre
+	 * 
+	 */
+	public int getIdentifiantCarte(Position carte)
 	{
-		
+		return this.cartes[carte.getIndiceLigne()][carte.getIndiceColonne()].getIdentifiantCarte();
+	}
+
+	public void decrementerNombreDeCartesPresentes()
+	{
+		this.nombreDeCartesPresentes +=-2;
 	}
 
 }

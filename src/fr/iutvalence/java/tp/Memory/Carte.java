@@ -18,6 +18,12 @@ public class Carte
 	 * cachée -true si la carte est face visible
 	 */
 	private boolean estFaceRetournee;
+	
+	/**
+	 * Vrai si la pair a été trouvée
+	 * Faux sinon
+	 */
+	private boolean aEteTrouvee;
 
 	/**
 	 * Symbole de la carte compris entre 1 et 12 car il y a 24 cartes donc 12
@@ -33,24 +39,20 @@ public class Carte
 	{
 		this.estFaceRetournee = FACE_PAR_DEFAUT;
 		this.identifiantCarte = symbole;
+		this.aEteTrouvee = false;
 	}
 
 	// TODO écrire un commentaire
-	/**
-	 * Renvoi l'identifiant de la carte courante
-	 * 
-	 */
-	public int getIdentifiantCarte()
-	{
-		return this.identifiantCarte;
-	}
+
 
 	/**
 	 * Renvoi l'identifiant d'une carte en String
 	 */
 	public String toString()
 	{
-		return "" + this.getIdentifiantCarte();
+		if (this.aEteTrouvee)
+			return "" + " ";
+		return ""+this.getIdentifiantCarte();
 	}
 
 	public void retournerCarte()
@@ -61,8 +63,19 @@ public class Carte
 			this.estFaceRetournee = true;
 	}
 
-	public boolean isEstFaceRetournee()
+	public boolean estFaceRetournee()
 	{
 		return this.estFaceRetournee;
 	}
+
+	public int getIdentifiantCarte()
+	{
+		return this.identifiantCarte;
+	}
+
+	public void enleverCarte()
+	{
+		this.aEteTrouvee = true;
+	}
+
 }

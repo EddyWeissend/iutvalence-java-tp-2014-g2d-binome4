@@ -21,40 +21,53 @@ public class Memory
 	private Plateau plateau;
 
 	/**
+	 * Joueurs de la partie
+	 */
+	private final Joueur[] joueurs;
+
+	/**
 	 * Créer une nouvelle partie de Memory jouable : -création d'un plateau -les
 	 * cartes sont retournées et placées
 	 * 
 	 */
-	public Memory()
+	public Memory(String nom1, String nom2)
 	{
 		this.plateau = new Plateau();
+		this.joueurs = new Joueur[2];
+		this.joueurs[0] = new Joueur(nom1);
+		this.joueurs[1] = new Joueur(nom2);
 	}
 
 	/**
 	 * Joue une partie de Memory
 	 */
-	public void jouer(Joueur joueur1, Joueur joueur2)
+	public void jouer()
 	{
+		int nombresDeCoups
 		while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 		{
-			while (this.jouerTour(joueur1))
-				this.jouerTour(joueur1);
-			if (this.plateau.obtenirNombreDeCartesPresentes() == 0)
-				break;
-			while (this.jouerTour(joueur2))
-				this.jouerTour(joueur2);
+			int indiceJoueurCourant = 0;
+			Joueur joueurCourant = this.joueurs[indiceJoueurCourant];
+			while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
+				{
+				jouerTour(joueurCourant);
+				joueurCourant=this.joueurs[(indiceJoueurCourant+1)%2]
+				}
 		}
 	}
 
 	/**
-	 * Joue un tour d'un joueur avant de passer au tour suivant
-	 * renvoi true si le tour est fini
+	 * Joue un tour d'un joueur avant de passer au tour suivant renvoi true si
+	 * le tour est fini
 	 */
-	private boolean jouerTour(Joueur joueur)
+	private void jouerTour(Joueur joueur)
 	{
+
+		jouerTourIntermediaire(joueur);
 		while (jouerTourIntermediaire(joueur))
+		{
 			this.jouerTourIntermediaire(joueur);
-		return true;
+		}
 	}
 
 	/**
@@ -62,31 +75,46 @@ public class Memory
 	 */
 	private boolean jouerTourIntermediaire(Joueur joueur)
 	{
-		Carte [] cartesChoisiesPendantCeTourIntermediaire=joueur.choisirCartes(this.plateau.NOMBRE_DE_LIGNES,this.plateau.NOMBRE_DE_COLONNES);		
-		Carte carte1=cartesChoisiesPendantCeTourIntermediaire[0];
-		Carte carte2=cartesChoisiesPendantCeTourIntermediaire[1];
+		positionsCoherentes();
+		while (positionsCoherentes());
+			positionsCoherentes();
 		this.plateau.retournerCarte(carte1);
 		this.plateau.retournerCarte(carte2);
-		if (carte1.getIdentifiantCarte() == carte2.getIdentifiantCarte())	
+		if (this.plateau.getIdentifiantCarte(carte1) == this.plateau.getIdentifiantCarte(carte2))
 		{
 			this.plateau.enleverCarte(carte1);
 			this.plateau.enleverCarte(carte2);
 			joueur.incrementerNombreDePairesTrouvees();
+			this.plateau.decrementerNombreDeCartesPresentes();
 			return true;
 		}
 
 		this.plateau.retournerCarte(carte1);
 		this.plateau.retournerCarte(carte2);
 		return false;
-
 	}
 
 	/**
 	 * Affiche le plateau en mode texte sur la console
 	 */
-	public String ObtenirRepresentationTextDuPlateau()
+	public String toString()
 	{
 		return this.plateau.toString();
 	}
 
+	public boolean positionsCoherentes()
+	{
+		Position[] cartesChoisiesPendantCeTourIntermediaire = joueur.choisirCartes(this.plateau.NOMBRE_DE_LIGNES,
+				this.plateau.NOMBRE_DE_COLONNES, this.plateau);
+		Position carte1 = cartesChoisiesPendantCeTourIntermediaire[0];
+		Position carte2 = cartesChoisiesPendantCeTourIntermediaire[1];
+		
+		if (equals(carte1, carte2));
+			return false;
+		if (this.plateau.cartes[carte1.getIndiceLigne()][carte1.getIndiceColonne()].aEteTrouvee)
+			return false;
+		if (this.plateau.cartes[carte2.getIndiceLigne()][carte2.getIndiceColonne()].aEteTrouvee)
+			return false;
+		return true;
+	}
 }

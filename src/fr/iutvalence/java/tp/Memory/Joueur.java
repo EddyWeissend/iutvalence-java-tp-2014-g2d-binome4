@@ -1,5 +1,7 @@
 package fr.iutvalence.java.tp.Memory;
 
+import java.util.Random;
+
 public class Joueur
 {
 	/**
@@ -23,12 +25,21 @@ public class Joueur
 
 	/**
 	 * Retourne les cartes choisies par le joueur
+	 * @param nombreDeColonnes 
+	 * @param nombreDeLignes 
 	 */
-	public Position [] choisirCartes()
+	public Position [] choisirCartes(int nombreDeLignes, int nombreDeColonnes)
 	{
-		Position [] cartesChoisies;
+		Position [] cartesChoisies= new Position[2];
+		Position [] nombreChoixPossible = new Position[];
+		Random generateurDeNombresAleatoires = new Random();
+		for (int indiceLigne = 0; indiceLigne < nombreDeLignes; indiceLigne++)
+			for (int indiceColonne = 0; indiceColonne < nombreDeColonnes; indiceColonne++)
+			{
+				if (plateau.cartes[indiceLigne][indiceColonne].aEteTrouvee)
+			}
 		cartesChoisies[0]=
-    	cartesChoisies[1]=		
+    	cartesChoisies[1]=
 		return null;
 		
 	}
