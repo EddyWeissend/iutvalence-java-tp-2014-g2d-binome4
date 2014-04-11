@@ -143,4 +143,22 @@ public class Plateau
 		this.nombreDeCartesPresentes +=-2;
 	}
 
+	public boolean positionsCoherentes(Position carte1, Position carte2)
+	{
+		if (this.cartes[carte1.getIndiceLigne()][carte1.getIndiceColonne()].isAEteTrouvee())
+			return false;
+		if (this.cartes[carte2.getIndiceLigne()][carte2.getIndiceColonne()].isAEteTrouvee())
+			return false;
+		return true;
+	}
+
+	public int getNombreDeColonnes()
+	{
+		return NOMBRE_DE_COLONNES;
+	}
+
+	public int getNombreDeLignes()
+	{
+		return NOMBRE_DE_LIGNES;
+	}
 }

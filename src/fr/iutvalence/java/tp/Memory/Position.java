@@ -22,4 +22,14 @@ public class Position
 	{
 		return this.indiceLigne;
 	}
+
+	public void setIndiceColonne(int indiceColonne)
+	{
+		this.indiceColonne = indiceColonne;
+	}
+
+	public void setIndiceLigne(int indiceLigne)
+	{
+		this.indiceLigne = indiceLigne;
+	}
 }

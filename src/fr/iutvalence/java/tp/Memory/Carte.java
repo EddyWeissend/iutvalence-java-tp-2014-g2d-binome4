@@ -78,4 +78,9 @@ public class Carte
 		this.aEteTrouvee = true;
 	}
 
+	public boolean isAEteTrouvee()
+	{
+		return this.aEteTrouvee;
+	}
+ 
 }

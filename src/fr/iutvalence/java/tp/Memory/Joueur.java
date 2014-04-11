@@ -30,16 +30,13 @@ public class Joueur
 	 */
 	public Position [] choisirCartes(int nombreDeLignes, int nombreDeColonnes)
 	{
-		Position [] cartesChoisies= new Position[2];
-		Position [] nombreChoixPossible = new Position[];
+
 		Random generateurDeNombresAleatoires = new Random();
-		for (int indiceLigne = 0; indiceLigne < nombreDeLignes; indiceLigne++)
-			for (int indiceColonne = 0; indiceColonne < nombreDeColonnes; indiceColonne++)
-			{
-				if (plateau.cartes[indiceLigne][indiceColonne].aEteTrouvee)
-			}
-		cartesChoisies[0]=
-    	cartesChoisies[1]=
+		Position [] cartesChoisies= new Position[2];
+		cartesChoisies[0].setIndiceLigne(generateurDeNombresAleatoires.nextInt(8));
+		cartesChoisies[0].setIndiceColonne(generateurDeNombresAleatoires.nextInt(8));
+		cartesChoisies[1].setIndiceLigne(generateurDeNombresAleatoires.nextInt(8));
+		cartesChoisies[1].setIndiceColonne(generateurDeNombresAleatoires.nextInt(8));
 		return null;
 		
 	}

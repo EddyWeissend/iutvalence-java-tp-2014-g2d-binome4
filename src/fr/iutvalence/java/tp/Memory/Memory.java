@@ -43,7 +43,6 @@ public class Memory
 	 */
 	public void jouer()
 	{
-		int nombresDeCoups
 		while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 		{
 			int indiceJoueurCourant = 0;
@@ -51,7 +50,7 @@ public class Memory
 			while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 				{
 				jouerTour(joueurCourant);
-				joueurCourant=this.joueurs[(indiceJoueurCourant+1)%2]
+				joueurCourant=this.joueurs[(indiceJoueurCourant+1)%2];
 				}
 		}
 	}
@@ -75,9 +74,9 @@ public class Memory
 	 */
 	private boolean jouerTourIntermediaire(Joueur joueur)
 	{
-		positionsCoherentes();
-		while (positionsCoherentes());
-			positionsCoherentes();
+		Position[] cartesChoisiesPendantCeTourIntermediaire=this.choisirCartes(joueur);
+		Position carte1=cartesChoisiesPendantCeTourIntermediaire[0];
+		Position carte2=cartesChoisiesPendantCeTourIntermediaire[1];
 		this.plateau.retournerCarte(carte1);
 		this.plateau.retournerCarte(carte2);
 		if (this.plateau.getIdentifiantCarte(carte1) == this.plateau.getIdentifiantCarte(carte2))
@@ -102,19 +101,12 @@ public class Memory
 		return this.plateau.toString();
 	}
 
-	public boolean positionsCoherentes()
-	{
-		Position[] cartesChoisiesPendantCeTourIntermediaire = joueur.choisirCartes(this.plateau.NOMBRE_DE_LIGNES,
-				this.plateau.NOMBRE_DE_COLONNES, this.plateau);
-		Position carte1 = cartesChoisiesPendantCeTourIntermediaire[0];
-		Position carte2 = cartesChoisiesPendantCeTourIntermediaire[1];
+	public Position[] choisirCartes(Joueur joueur){
 		
-		if (equals(carte1, carte2));
-			return false;
-		if (this.plateau.cartes[carte1.getIndiceLigne()][carte1.getIndiceColonne()].aEteTrouvee)
-			return false;
-		if (this.plateau.cartes[carte2.getIndiceLigne()][carte2.getIndiceColonne()].aEteTrouvee)
-			return false;
-		return true;
+		Position[] cartesChoisiesPendantCeTourIntermediaire = joueur.choisirCartes(this.plateau.getNombreDeLignes(),
+				this.plateau.getNombreDeColonnes());
+		while(!(this.plateau.positionsCoherentes(cartesChoisiesPendantCeTourIntermediaire[0], cartesChoisiesPendantCeTourIntermediaire[1])))
+			this.choisirCartes(joueur);
+		return cartesChoisiesPendantCeTourIntermediaire;
 	}
 }
