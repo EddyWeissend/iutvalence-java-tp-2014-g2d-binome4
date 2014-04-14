@@ -17,7 +17,7 @@ public class Position
 		return this.indiceColonne;
 	}
 
-
+ 
 	public int getIndiceLigne()
 	{
 		return this.indiceLigne;

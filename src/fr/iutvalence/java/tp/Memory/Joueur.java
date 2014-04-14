@@ -29,7 +29,7 @@ public class Joueur
 	 * @param nombreDeLignes 
 	 */
 	public Position [] choisirCartes(int nombreDeLignes, int nombreDeColonnes)
-	{
+	{ 
 		Random generateurDeNombresAleatoires = new Random();
 		Position [] cartesChoisies= new Position[2];
 		cartesChoisies[0]= new Position(generateurDeNombresAleatoires.nextInt(nombreDeLignes),generateurDeNombresAleatoires.nextInt(nombreDeColonnes));

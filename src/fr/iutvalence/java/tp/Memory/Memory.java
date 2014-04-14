@@ -106,7 +106,7 @@ public class Memory
 	}
 
 	public Position[] choisirCartes(Joueur joueur){
-		
+		 
 		Position[] cartesChoisiesPendantCeTourIntermediaire = new Position[2];
 		cartesChoisiesPendantCeTourIntermediaire=joueur.choisirCartes(this.plateau.getNombreDeLignes(),
 				this.plateau.getNombreDeColonnes());
