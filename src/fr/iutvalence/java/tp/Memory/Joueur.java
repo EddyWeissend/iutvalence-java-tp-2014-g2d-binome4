@@ -30,14 +30,11 @@ public class Joueur
 	 */
 	public Position [] choisirCartes(int nombreDeLignes, int nombreDeColonnes)
 	{
-
 		Random generateurDeNombresAleatoires = new Random();
 		Position [] cartesChoisies= new Position[2];
-		cartesChoisies[0].setIndiceLigne(generateurDeNombresAleatoires.nextInt(8));
-		cartesChoisies[0].setIndiceColonne(generateurDeNombresAleatoires.nextInt(8));
-		cartesChoisies[1].setIndiceLigne(generateurDeNombresAleatoires.nextInt(8));
-		cartesChoisies[1].setIndiceColonne(generateurDeNombresAleatoires.nextInt(8));
-		return null;
+		cartesChoisies[0]= new Position(generateurDeNombresAleatoires.nextInt(nombreDeLignes),generateurDeNombresAleatoires.nextInt(nombreDeColonnes));
+		cartesChoisies[1]= new Position(generateurDeNombresAleatoires.nextInt(nombreDeLignes),generateurDeNombresAleatoires.nextInt(nombreDeColonnes));
+		return cartesChoisies;
 		
 	}
 	

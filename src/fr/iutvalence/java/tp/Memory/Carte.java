@@ -64,7 +64,7 @@ public class Carte
 	}
 
 	public boolean estFaceRetournee()
-	{
+	{ 
 		return this.estFaceRetournee;
 	}
 

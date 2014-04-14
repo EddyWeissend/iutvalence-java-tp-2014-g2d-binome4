@@ -6,7 +6,7 @@ public class Position
 	
 	private int indiceLigne;
 
-	public Position(int indiceColonne, int indiceLigne)
+	public Position(int indiceLigne, int indiceColonne)
 	{
 		this.indiceColonne = indiceColonne;
 		this.indiceLigne = indiceLigne;
@@ -21,15 +21,5 @@ public class Position
 	public int getIndiceLigne()
 	{
 		return this.indiceLigne;
-	}
-
-	public void setIndiceColonne(int indiceColonne)
-	{
-		this.indiceColonne = indiceColonne;
-	}
-
-	public void setIndiceLigne(int indiceLigne)
-	{
-		this.indiceLigne = indiceLigne;
 	}
 }

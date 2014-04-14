@@ -72,6 +72,10 @@ public class Memory
 	/**
 	 * methode finissant le tour et demarre le prochain tour
 	 */
+	/**
+	 * @param joueur
+	 * @return
+	 */
 	private boolean jouerTourIntermediaire(Joueur joueur)
 	{
 		Position[] cartesChoisiesPendantCeTourIntermediaire=this.choisirCartes(joueur);
@@ -103,8 +107,14 @@ public class Memory
 
 	public Position[] choisirCartes(Joueur joueur){
 		
-		Position[] cartesChoisiesPendantCeTourIntermediaire = joueur.choisirCartes(this.plateau.getNombreDeLignes(),
+		Position[] cartesChoisiesPendantCeTourIntermediaire = new Position[2];
+		cartesChoisiesPendantCeTourIntermediaire=joueur.choisirCartes(this.plateau.getNombreDeLignes(),
 				this.plateau.getNombreDeColonnes());
+		System.out.println(""+cartesChoisiesPendantCeTourIntermediaire[0].getIndiceLigne()
+				+cartesChoisiesPendantCeTourIntermediaire[0].getIndiceColonne()
+				+cartesChoisiesPendantCeTourIntermediaire[1].getIndiceLigne()
+				+cartesChoisiesPendantCeTourIntermediaire[1].getIndiceColonne());
+		
 		while(!(this.plateau.positionsCoherentes(cartesChoisiesPendantCeTourIntermediaire[0], cartesChoisiesPendantCeTourIntermediaire[1])))
 			this.choisirCartes(joueur);
 		return cartesChoisiesPendantCeTourIntermediaire;
