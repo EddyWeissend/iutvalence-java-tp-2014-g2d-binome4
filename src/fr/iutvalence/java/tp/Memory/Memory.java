@@ -45,13 +45,18 @@ public class Memory
 	{
 		while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 		{
+			int nbCoups=0;
 			int indiceJoueurCourant = 0;
 			Joueur joueurCourant = this.joueurs[indiceJoueurCourant];
 			while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 				{
 				jouerTour(joueurCourant);
 				joueurCourant=this.joueurs[(indiceJoueurCourant+1)%2];
+				nbCoups++;
+				System.out.println(this.plateau.toString());
+				System.out.println("nombre cartes presente"+this.plateau.obtenirNombreDeCartesPresentes());
 				}
+			System.out.println("nombre Coups="+nbCoups);
 		}
 	}
 
@@ -61,11 +66,10 @@ public class Memory
 	 */
 	private void jouerTour(Joueur joueur)
 	{
-
-		jouerTourIntermediaire(joueur);
-		while (jouerTourIntermediaire(joueur))
+		boolean a=jouerTourIntermediaire(joueur);
+		while (a)
 		{
-			this.jouerTourIntermediaire(joueur);
+			a=this.jouerTourIntermediaire(joueur);
 		}
 	}
 
@@ -78,7 +82,7 @@ public class Memory
 	 */
 	private boolean jouerTourIntermediaire(Joueur joueur)
 	{
-		Position[] cartesChoisiesPendantCeTourIntermediaire=this.choisirCartes(joueur);
+		Position[] cartesChoisiesPendantCeTourIntermediaire=this.choisirCartesCoherentes(joueur);
 		Position carte1=cartesChoisiesPendantCeTourIntermediaire[0];
 		Position carte2=cartesChoisiesPendantCeTourIntermediaire[1];
 		this.plateau.retournerCarte(carte1);
@@ -104,19 +108,26 @@ public class Memory
 	{
 		return this.plateau.toString();
 	}
-
+	
 	public Position[] choisirCartes(Joueur joueur){
-		 
 		Position[] cartesChoisiesPendantCeTourIntermediaire = new Position[2];
 		cartesChoisiesPendantCeTourIntermediaire=joueur.choisirCartes(this.plateau.getNombreDeLignes(),
-				this.plateau.getNombreDeColonnes());
-		System.out.println(""+cartesChoisiesPendantCeTourIntermediaire[0].getIndiceLigne()
-				+cartesChoisiesPendantCeTourIntermediaire[0].getIndiceColonne()
-				+cartesChoisiesPendantCeTourIntermediaire[1].getIndiceLigne()
-				+cartesChoisiesPendantCeTourIntermediaire[1].getIndiceColonne());
-		
-		while(!(this.plateau.positionsCoherentes(cartesChoisiesPendantCeTourIntermediaire[0], cartesChoisiesPendantCeTourIntermediaire[1])))
-			this.choisirCartes(joueur);
+		this.plateau.getNombreDeColonnes());
 		return cartesChoisiesPendantCeTourIntermediaire;
+	}
+
+	public Position[] choisirCartesCoherentes(Joueur joueur){
+		 Position[] cartesChoisiesPendantCeTourIntermediaire=this.choisirCartes(joueur);
+		 for (int i=0;!(this.plateau.positionsCoherentes(cartesChoisiesPendantCeTourIntermediaire[0], cartesChoisiesPendantCeTourIntermediaire[1]));i++)
+		 {
+			 cartesChoisiesPendantCeTourIntermediaire=this.choisirCartes(joueur);
+			 if (i == 250) 
+				 {
+				 System.out.println(".");
+				 }
+		 }
+			 
+		 			 
+		 return cartesChoisiesPendantCeTourIntermediaire;
 	}
 }

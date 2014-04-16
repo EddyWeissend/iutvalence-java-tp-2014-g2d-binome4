@@ -22,4 +22,12 @@ public class Position
 	{
 		return this.indiceLigne;
 	}
+
+	@Override
+	public String toString()
+	{
+		return "Position [indiceColonne=" + indiceColonne + ", indiceLigne=" + indiceLigne + "]";
+	}
+	
+	
 }

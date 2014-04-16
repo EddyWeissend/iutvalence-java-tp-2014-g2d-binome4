@@ -34,6 +34,7 @@ public class Joueur
 		Position [] cartesChoisies= new Position[2];
 		cartesChoisies[0]= new Position(generateurDeNombresAleatoires.nextInt(nombreDeLignes),generateurDeNombresAleatoires.nextInt(nombreDeColonnes));
 		cartesChoisies[1]= new Position(generateurDeNombresAleatoires.nextInt(nombreDeLignes),generateurDeNombresAleatoires.nextInt(nombreDeColonnes));
+		//System.out.println(".");
 		return cartesChoisies;
 		
 	}
