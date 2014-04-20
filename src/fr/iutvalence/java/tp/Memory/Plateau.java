@@ -25,22 +25,21 @@ public class Plateau
 	 * Nombre de cases du plateau
 	 */
 
-	// private final static int NOMBRE_DE_CASES = NOMBRE_DE_COLONNES *
-	// NOMBRE_DE_LIGNES;
-
 	/**
-	 * Représente le nombre de cartes présentes sur le plateau
+	 * Represente le nombre de cartes presentes sur le plateau
 	 */
 	private int nombreDeCartesPresentes;
 
 	/**
-	 * Tableau où sont stockées les cartes du jeu
+	 * Tableau ou sont stockees les cartes du jeu
 	 */
 	private Carte[][] cartes;
 
 	/**
-	 * Création d'un plateau de jeu : - toutes les cartes du jeu sont retournées
-	 * -
+	 * Creation d'un plateau de jeu : -on initialise le plateau vide
+	 * -on lui ajoute des cartes face retourn�es
+	 * -on m�lange les cartes
+	 * 
 	 */
 	public Plateau()
 	{
@@ -52,7 +51,7 @@ public class Plateau
 	}
 
 	/**
-	 * Initialise/reinitialise le tableau des cartes en les plaçant/remplaçant
+	 * Methode qui Initialise/reinitialise le tableau des cartes en les placant/remplacant
 	 */
 	private void placerCartes()
 	{
@@ -68,7 +67,7 @@ public class Plateau
 	}
 
 	/**
-	 * Melange les cartes du plateau
+	 * Methode qui melange les cartes du plateau
 	 */
 	private void melangerCartes()
 	{
@@ -87,9 +86,9 @@ public class Plateau
 		}
 	}
 
-	// TODO écrire un commentaire
 	/**
 	 * Renvoi le nombre de cartes presentes sur le plateau
+	 * @return int
 	 */
 	public int obtenirNombreDeCartesPresentes()
 	{
@@ -114,15 +113,17 @@ public class Plateau
 	}
 
 	/**
-	 * Enlève la carte du jeu a la position passée en paramètre
+	 * Methode qui enleve la carte du jeu a la position passee en parametre
+	 * @param carte 
+	 * Carte a la position choisi
 	 */
 	public void enleverCarte(Position carte)
 	{
-		this.cartes[carte.getIndiceLigne()][carte.getIndiceColonne()].enleverCarte();
+		this.cartes[carte.obtenirIndiceLigne()][carte.obtenirIndiceColonne()].enleverCarte();
 	}
 
 	/**
-	 * Retournes la carte du jeu a la position passée en paramètre
+	 * Methode qui retourne la carte du jeu a la position passee en parametre
 	 */
 	public void retournerCarte(Position carte)
 	{
@@ -135,7 +136,7 @@ public class Plateau
 	 */
 	public int getIdentifiantCarte(Position carte)
 	{
-		return this.cartes[carte.getIndiceLigne()][carte.getIndiceColonne()].getIdentifiantCarte();
+		return this.cartes[carte.obtenirIndiceLigne()][carte.obtenirIndiceColonne()].getIdentifiantCarte();
 	}
 
 	public void decrementerNombreDeCartesPresentes()
@@ -146,12 +147,12 @@ public class Plateau
 	public boolean positionsCoherentes(Position carte1, Position carte2)
 	{ 
 		// TODO redéfinir equals dans position 
-		if(carte1.getIndiceLigne()==carte2.getIndiceLigne())
-			if(carte1.getIndiceColonne()==carte2.getIndiceColonne())
+		if(carte1.obtenirIndiceLigne()==carte2.obtenirIndiceLigne())
+			if(carte1.obtenirIndiceColonne()==carte2.obtenirIndiceColonne())
 				return false;
-		if (this.cartes[carte1.getIndiceLigne()][carte1.getIndiceColonne()].isAEteTrouvee())
+		if (this.cartes[carte1.obtenirIndiceLigne()][carte1.obtenirIndiceColonne()].isAEteTrouvee())
 			return false;
-		if (this.cartes[carte2.getIndiceLigne()][carte2.getIndiceColonne()].isAEteTrouvee())
+		if (this.cartes[carte2.obtenirIndiceLigne()][carte2.obtenirIndiceColonne()].isAEteTrouvee())
 			return false;
 		return true;
 	}
