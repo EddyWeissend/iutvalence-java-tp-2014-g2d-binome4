@@ -3,9 +3,9 @@ package fr.iutvalence.java.tp.Memory;
 import java.util.Random;
 
 /**
- * Définition d'un plateau de jeu
+ * Definition d'un plateau de jeu
  * 
- * @author weissene
+ * @author Weissend/Lacoste
  * 
  */
 public class Plateau
@@ -37,8 +37,8 @@ public class Plateau
 
 	/**
 	 * Creation d'un plateau de jeu : -on initialise le plateau vide
-	 * -on lui ajoute des cartes face retourn�es
-	 * -on m�lange les cartes
+	 * -on lui ajoute des cartes face retournees
+	 * -on melange les cartes
 	 * 
 	 */
 	public Plateau()
@@ -115,7 +115,7 @@ public class Plateau
 	/**
 	 * Methode qui enleve la carte du jeu a la position passee en parametre
 	 * @param carte 
-	 * Carte a la position choisi
+	 * Carte a la position choisie
 	 */
 	public void enleverCarte(Position carte)
 	{
@@ -124,6 +124,8 @@ public class Plateau
 
 	/**
 	 * Methode qui retourne la carte du jeu a la position passee en parametre
+	 * @param carte
+	 * Carte a la position choisie 
 	 */
 	public void retournerCarte(Position carte)
 	{
@@ -131,22 +133,37 @@ public class Plateau
 	}
 	
 	/**
-	 * Renvoi l'identifiant de la carte a la position passée en paramètre
-	 * 
+	 * Renvoi l'identifiant de la carte a la position passee en parametre
+	 * @param carte 
+	 * Carte la position choisi
+	 * @return int
+	 * Identifiant de la carte
 	 */
 	public int getIdentifiantCarte(Position carte)
 	{
-		return this.cartes[carte.obtenirIndiceLigne()][carte.obtenirIndiceColonne()].getIdentifiantCarte();
+		return this.cartes[carte.obtenirIndiceLigne()][carte.obtenirIndiceColonne()].obtenirIdentifiantCarte();
 	}
 
+	/**
+	 * methode qui reduit le nombre de cartes presentes sur le plateau a chaque fois qu'une paire est trouvee
+	 */
 	public void decrementerNombreDeCartesPresentes()
 	{
 		this.nombreDeCartesPresentes -= 2;
 	}
 
+	/**
+	 * Methode qui verifie si les cartes choisies sont differentes ou si elles ont deja ete trouvees
+	 *
+	 * @param carte1
+	 * Premi�re carte choisie a la position passee en parametre
+	 * @param carte2
+	 * Deuxi�me carte choisie a la position passee en parametre
+	 * @return boolean
+	 */
 	public boolean positionsCoherentes(Position carte1, Position carte2)
 	{ 
-		// TODO redéfinir equals dans position 
+		
 		if(carte1.obtenirIndiceLigne()==carte2.obtenirIndiceLigne())
 			if(carte1.obtenirIndiceColonne()==carte2.obtenirIndiceColonne())
 				return false;
@@ -157,11 +174,19 @@ public class Plateau
 		return true;
 	}
 
+	/**
+	 * Methode qui permet d'obtenir le nombre de colonne du plateau
+	 * @return int
+	 */
 	public int getNombreDeColonnes()
 	{
 		return NOMBRE_DE_COLONNES;
 	}
 
+	/**
+	 * Methode qui permet d'obtenir le nombre de ligne du plateau
+	 * @return int
+	 */
 	public int getNombreDeLignes()
 	{
 		return NOMBRE_DE_LIGNES;

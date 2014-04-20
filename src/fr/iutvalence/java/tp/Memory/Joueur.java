@@ -2,11 +2,18 @@ package fr.iutvalence.java.tp.Memory;
 
 import java.util.Random;
 
+/**
+ * Definition de ce qu'est un joueur qui joue au memory
+ * 
+ * @author Weissend/Lacoste
+ *
+ */
 public class Joueur
 {
 	/**
 	 * Nom du joueur
 	 */
+	@SuppressWarnings("unused")
 	private String nomDuJoueur;
 	
 	/**
@@ -15,7 +22,9 @@ public class Joueur
 	private int nombreDePairesTrouvees;
 
 	/**
-	 * Cr√©ation d'un joueur : un nom
+	 * Creation d'un joueur
+	 * @param nomDuJoueur 
+	 * Le nom du joueur
 	 */
 	public Joueur(String nomDuJoueur)
 	{
@@ -24,9 +33,13 @@ public class Joueur
 	}
 
 	/**
-	 * Retourne les cartes choisies par le joueur
+	 * Methode qui permet aux joueurs de choisir des cartes alÈatoires sur le plateau 
+	 * et qui renvoi les cartes choisies alÈatoirement
 	 * @param nombreDeColonnes 
+	 * Taille en colonnes du plateau
 	 * @param nombreDeLignes 
+	 * Taille en lignes du plateau
+	 * @return Position[]
 	 */
 	public Position [] choisirCartes(int nombreDeLignes, int nombreDeColonnes)
 	{ 
@@ -40,7 +53,7 @@ public class Joueur
 	}
 	
 	/**
-	 * Incr√©mente le nombre de paires trouv√©es
+	 * methode qui permet d'incrementer le nombre de paires trouvees
 	 */
 	public void incrementerNombreDePairesTrouvees()
 	{
@@ -48,7 +61,8 @@ public class Joueur
 	}
 	
 	/**
-	 * retourne le nombre de paires trouvees
+	 * methode qui permet d'obtenir le nombre de paires trouvees par le joueur
+	 * @return int
 	 */
 	public int obtenirNombreDePairesTrouvees()
 	{

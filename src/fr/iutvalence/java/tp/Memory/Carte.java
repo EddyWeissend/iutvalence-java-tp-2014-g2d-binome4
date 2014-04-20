@@ -1,40 +1,48 @@
 package fr.iutvalence.java.tp.Memory;
 
 /**
- * Représentation d'une carte de jeu Memory
+ * Definition d'une carte de jeu Memory :
+ * -La face sur laquelle elle est pos�e
+ * -Son identifiant
+ * -Si elle a �t� trouvee ou non
+ * -
  * 
- * @author weissene
+ * @author Weissend/Lacoste
  * 
  */
 public class Carte
 {
 	/**
-	 * Face de la carte par défaut
+	 * Face de la carte par defaut
 	 */
 	private static final boolean FACE_PAR_DEFAUT = false;
 
 	/**
-	 * Indique si la carte est retournée ou non : -false si la carte est face
-	 * cachée -true si la carte est face visible
+	 * Indique si la carte est retournee ou non : 
+	 * -false si la carte est face cachee 
+	 * -true si la carte est face visible
 	 */
 	private boolean estFaceRetournee;
 	
 	/**
-	 * Vrai si la pair a été trouvée
+	 * Vrai si la carte a ete trouvee
 	 * Faux sinon
 	 */
 	private boolean aEteTrouvee;
 
 	/**
-	 * Symbole de la carte compris entre 1 et 12 car il y a 24 cartes donc 12
-	 * paires
+	 * Symbole de la carte compris entre 1 et 12 
+	 * car il y a 12 paires
 	 */
 	private int identifiantCarte;
 
-	// TODO compléter le commentaire
+	
 	/**
-	 * Créer une carte face cachée avec un identifiant passé en parametre
+	 * Creer une carte face cachee avec un identifiant passe en parametre
+	 * @param symbole 
+	 * symbole de la carte que l'on veut creer
 	 */
+	
 	public Carte(int symbole)
 	{
 		this.estFaceRetournee = FACE_PAR_DEFAUT;
@@ -42,19 +50,19 @@ public class Carte
 		this.aEteTrouvee = false;
 	}
 
-	// TODO écrire un commentaire
-
-
 	/**
-	 * Renvoi l'identifiant d'une carte en String
+	 * Redefinition de la methode toString pour renvoyer l'identifiant d'une carte en String dans la console
 	 */
 	public String toString()
 	{
 		if (this.aEteTrouvee)
 			return "" + " ";
-		return ""+this.getIdentifiantCarte();
+		return ""+this.obtenirIdentifiantCarte();
 	}
 
+	/**
+	 * methode qui permet de retourner la carte
+	 */
 	public void retournerCarte()
 	{
 		if (this.estFaceRetournee)
@@ -63,21 +71,36 @@ public class Carte
 			this.estFaceRetournee = true;
 	}
 
+	/**
+	 * Methode qui interroge la carte pour savoir si elle est face retournee ou non
+	 * @return boolean
+	 */
 	public boolean estFaceRetournee()
 	{ 
 		return this.estFaceRetournee;
 	}
 
-	public int getIdentifiantCarte()
+	/**
+	 * Methode qui permet d'obtenir l'identifiant de la carte
+	 * @return int
+	 */
+	public int obtenirIdentifiantCarte()
 	{
 		return this.identifiantCarte;
 	}
 
+	/**
+	 * Methode qui permet d'enlever la carte
+	 */
 	public void enleverCarte()
 	{ 
 		this.aEteTrouvee = true;
 	}
 
+	/**
+	 * Methode qui interroge la carte pour savoir si elle a ete trouvee ou non
+	 * @return boolean
+	 */
 	public boolean isAEteTrouvee()
 	{
 		return this.aEteTrouvee;

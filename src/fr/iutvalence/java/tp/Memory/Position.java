@@ -2,6 +2,8 @@ package fr.iutvalence.java.tp.Memory;
 
 /**
  * Definition d'une position sur le plateau
+ * 
+ * @author Weissend/Lacoste
  */
 public class Position
 {

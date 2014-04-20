@@ -3,18 +3,20 @@ package fr.iutvalence.java.tp.Memory;
 /**
  * Permet de jouer une partie de memory
  * 
- * @author weissene
+ * @author Weissend/Lacoste
  * 
  */
 public class LanceurDeMemory
 {
 	/**
 	 * Permet de lancer une partie de Memory et permet de la simuler
+	 * @param args 
+	 * Arguments permettant au jeu de fonctionner
 	 */
 	public static void main(String[] args)
 	{
 		System.out.println("Creation de la partie");
-		Memory partie = new Memory("Pierre","Eddy Malou");
+		Memory partie = new Memory("Antoine","Eddy");
 		System.out.println("Demarrage de la partie");
 		System.out.println(partie.toString());
 		partie.jouer();

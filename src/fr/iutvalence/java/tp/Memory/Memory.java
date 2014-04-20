@@ -1,10 +1,13 @@
 package fr.iutvalence.java.tp.Memory;
 
-// TODO écrire un commentaire plus précis
+
 /**
- * Définition d'une partie de Memory : -un plateau
+ * Definition d'une partie de Memory : 
+ * -un plateau rempli de carte melanges et placees face retournes
+ * -Des joueurs
+ * -des tours de jeu
  * 
- * @author weissene
+ * @author Weissend/Lacoste
  * 
  */
 public class Memory
@@ -13,6 +16,7 @@ public class Memory
 	/**
 	 * Le nombre de cartes du jeu
 	 */
+	@SuppressWarnings("unused")
 	private final static int NOMBRE_TOTAL_DE_CARTES_DU_JEU = 24;
 
 	/**
@@ -26,8 +30,14 @@ public class Memory
 	private final Joueur[] joueurs;
 
 	/**
-	 * Créer une nouvelle partie de Memory jouable : -création d'un plateau -les
-	 * cartes sont retournées et placées
+	 * Methode qui permet de creer une nouvelle partie de Memory jouable : 
+	 * -creation d'un plateau 
+	 * -les cartes sont retournees et placees
+	 * -les joueurs sont initialis�s
+	 * @param nom1 
+	 * Nom du joueur 1
+	 * @param nom2 
+	 * Nom du joueur 2
 	 * 
 	 */
 	public Memory(String nom1, String nom2)
@@ -39,7 +49,7 @@ public class Memory
 	}
 
 	/**
-	 * Joue une partie de Memory
+	 * methode qui permet de jouer une partie enti�re de Memory
 	 */
 	public void jouer()
 	{
@@ -61,8 +71,9 @@ public class Memory
 	}
 
 	/**
-	 * Joue un tour d'un joueur avant de passer au tour suivant renvoi true si
-	 * le tour est fini
+	 * Methode qui permet de jouer le tour complet d'un joueur avant de passer au joueur suivant 
+	 * @param joueur 
+	 * Joueur en train de jouer au Memory
 	 */
 	private void jouerTour(Joueur joueur)
 	{
@@ -74,11 +85,12 @@ public class Memory
 	}
 
 	/**
-	 * methode finissant le tour et demarre le prochain tour
+	 * methode finissant le tour intermediaire et demarre le prochain tour intermediaire
 	 */
 	/**
 	 * @param joueur
-	 * @return
+	 * Joueur jouant son tour intermediaire
+	 * @return boolean
 	 */
 	private boolean jouerTourIntermediaire(Joueur joueur)
 	{
@@ -102,13 +114,20 @@ public class Memory
 	}
 
 	/**
-	 * Affiche le plateau en mode texte sur la console
+	 * Redefinition de la methode toString qui permet d'affiche le plateau en mode texte sur la console
 	 */
 	public String toString()
 	{
 		return this.plateau.toString();
 	}
 	
+	/**
+	 * Methode qui permet au joueur passe en parametre de choisir ses cartes
+	 * @param joueur
+	 * Joueur choisissant ses cartes
+	 * @return Position[]
+	 * La methode renvoi un tableau de position
+	 */
 	public Position[] choisirCartes(Joueur joueur){
 		Position[] cartesChoisiesPendantCeTourIntermediaire = new Position[2];
 		cartesChoisiesPendantCeTourIntermediaire=joueur.choisirCartes(this.plateau.getNombreDeLignes(),
@@ -116,6 +135,13 @@ public class Memory
 		return cartesChoisiesPendantCeTourIntermediaire;
 	}
 
+	/**
+	 * methode qui permet de verifier si les cartes choisies par le joueur sont coherentes
+	 * @param joueur
+	 * joueur choisissant les cartes
+	 * @return Position[]
+	 * cette methode renvoi un tableau de position
+	 */
 	public Position[] choisirCartesCoherentes(Joueur joueur){
 		 Position[] cartesChoisiesPendantCeTourIntermediaire=this.choisirCartes(joueur);
 		 for (int i=0;!(this.plateau.positionsCoherentes(cartesChoisiesPendantCeTourIntermediaire[0], cartesChoisiesPendantCeTourIntermediaire[1]));i++)
