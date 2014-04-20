@@ -149,7 +149,7 @@ public class Memory
 			 cartesChoisiesPendantCeTourIntermediaire=this.choisirCartes(joueur);
 			 if (i == 250) 
 				 {
-				 System.out.println(".");
+				 System.out.println("."); 
 				 }
 		 }
 			 

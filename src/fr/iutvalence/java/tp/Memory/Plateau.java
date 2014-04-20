@@ -180,7 +180,7 @@ public class Plateau
 	public int getNombreDeColonnes()
 	{
 		return NOMBRE_DE_COLONNES;
-	}
+	} 
 
 	/**
 	 * Methode qui permet d'obtenir le nombre de ligne du plateau

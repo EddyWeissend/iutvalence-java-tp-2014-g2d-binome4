@@ -13,7 +13,7 @@ public class LanceurDeMemory
 	 * @param args 
 	 * Arguments permettant au jeu de fonctionner
 	 */
-	public static void main(String[] args)
+	public static void main(String[] args) 
 	{
 		System.out.println("Creation de la partie");
 		Memory partie = new Memory("Antoine","Eddy");

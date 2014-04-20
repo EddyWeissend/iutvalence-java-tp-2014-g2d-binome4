@@ -60,7 +60,7 @@ public class Position
 	}
 	
 	/**
-	 * Redefinition de la methode equals pour comparer 2 position
+	 * Redefinition de la methode equals pour comparer 2 position 
 	 * @param carte
 	 * Carte a la position donnee que l'on veut comparer
 	 * @return boolean

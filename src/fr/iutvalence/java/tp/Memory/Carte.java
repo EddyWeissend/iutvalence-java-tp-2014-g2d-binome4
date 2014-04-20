@@ -94,7 +94,7 @@ public class Carte
 	 */
 	public void enleverCarte()
 	{ 
-		this.aEteTrouvee = true;
+		this.aEteTrouvee = true; 
 	}
 
 	/**
