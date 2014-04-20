@@ -37,8 +37,8 @@ public class Plateau
 
 	/**
 	 * Creation d'un plateau de jeu : -on initialise le plateau vide
-	 * -on lui ajoute des cartes face retournées
-	 * -on mélange les cartes
+	 * -on lui ajoute des cartes face retournï¿½es
+	 * -on mï¿½lange les cartes
 	 * 
 	 */
 	public Plateau()
@@ -127,7 +127,7 @@ public class Plateau
 	 */
 	public void retournerCarte(Position carte)
 	{
-		
+		this.cartes[carte.obtenirIndiceLigne()][carte.obtenirIndiceColonne()].retournerCarte();
 	}
 	
 	/**
