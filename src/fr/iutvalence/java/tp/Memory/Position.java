@@ -59,5 +59,16 @@ public class Position
 		return "Position [indiceColonne=" + this.indiceColonne + ", indiceLigne=" + this.indiceLigne + "]";
 	}
 	
-	
+	/**
+	 * Redefinition de la methode equals pour comparer 2 position
+	 * @param carte
+	 * Carte a la position donnee que l'on veut comparer
+	 * @return boolean
+	 */
+	public boolean equals(Position carte){
+		if ((this.indiceColonne==carte.indiceColonne) && (this.indiceLigne== carte.indiceLigne))
+			return true;
+		return false;
+		
+	}
 }

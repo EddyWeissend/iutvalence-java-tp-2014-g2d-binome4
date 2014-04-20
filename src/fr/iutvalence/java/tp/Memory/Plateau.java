@@ -164,9 +164,8 @@ public class Plateau
 	public boolean positionsCoherentes(Position carte1, Position carte2)
 	{ 
 		
-		if(carte1.obtenirIndiceLigne()==carte2.obtenirIndiceLigne())
-			if(carte1.obtenirIndiceColonne()==carte2.obtenirIndiceColonne())
-				return false;
+		if(carte1.equals(carte2))
+			return false;
 		if (this.cartes[carte1.obtenirIndiceLigne()][carte1.obtenirIndiceColonne()].isAEteTrouvee())
 			return false;
 		if (this.cartes[carte2.obtenirIndiceLigne()][carte2.obtenirIndiceColonne()].isAEteTrouvee())
