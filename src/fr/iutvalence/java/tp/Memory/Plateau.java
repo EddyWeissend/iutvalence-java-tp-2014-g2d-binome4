@@ -14,12 +14,12 @@ public class Plateau
 	/**
 	 * Longueur du plateau
 	 */
-	private final static int NOMBRE_DE_COLONNES = 6;
+	public final static int NOMBRE_DE_COLONNES = 6;
 
 	/**
 	 * Largeur du plateau
 	 */
-	private final static int NOMBRE_DE_LIGNES = 4;
+	public final static int NOMBRE_DE_LIGNES = 4;
 
 	/**
 	 * Nombre de cases du plateau
@@ -94,22 +94,6 @@ public class Plateau
 	{
 		return this.nombreDeCartesPresentes;
 
-	}
-
-	/**
-	 * redefinition de la methode toString qui affiche en texte le plateau
-	 */
-	public String toString()
-	{
-		String representationTexteDuPlateau = "";
-		for (int indiceLigne = 0; indiceLigne < NOMBRE_DE_LIGNES; indiceLigne++)
-		{
-			for (int indiceColonne = 0; indiceColonne < NOMBRE_DE_COLONNES; indiceColonne++)
-				representationTexteDuPlateau = representationTexteDuPlateau
-						+ (this.cartes[indiceLigne][indiceColonne]).toString() + "\t";
-			representationTexteDuPlateau = representationTexteDuPlateau + "\n";
-		}
-		return representationTexteDuPlateau;
 	}
 
 	/**
@@ -189,5 +173,10 @@ public class Plateau
 	public int getNombreDeLignes()
 	{
 		return NOMBRE_DE_LIGNES;
+	}
+
+	public Carte obtenirCarte(Position position)
+	{
+		return this.cartes[position.obtenirIndiceLigne()][position.obtenirIndiceColonne()];
 	}
 }

@@ -19,18 +19,25 @@ public class Memory
 	 */
 	private final Joueur[] joueurs;
 
+	
+	/**
+	 * L'affichage
+	 */
+	private final Affichage affichage;
 	/**
 	 * Methode qui permet de creer une nouvelle partie de Memory jouable :
 	 * -creation d'un plateau -les cartes sont retournees et placees -les
 	 * joueurs sont initialisés
 	 * 
 	 * @param joueurs les joueurs
+	 * @param affichage l'affichage
 	 * 
 	 */
-	public Memory(Joueur[] joueurs)
+	public Memory(Joueur[] joueurs, Affichage affichage)
 	{
 		this.plateau = new Plateau();
 		this.joueurs = joueurs;
+		this.affichage = affichage;
 	}
 
 	/**
@@ -38,21 +45,17 @@ public class Memory
 	 */
 	public void jouer()
 	{
+		this.affichage.afficherDebutPartie();
 		while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 		{
-			int nbCoups = 0;
 			int indiceJoueurCourant = 0;
 			Joueur joueurCourant = this.joueurs[indiceJoueurCourant];
 			while (this.plateau.obtenirNombreDeCartesPresentes() != 0)
 			{
 				this.jouerTour(joueurCourant);
 				joueurCourant = this.joueurs[(indiceJoueurCourant + 1) % 2];
-				nbCoups++;
-				System.out.println(this.plateau.toString());
-				System.out.println("nombre cartes presente"
-						+ this.plateau.obtenirNombreDeCartesPresentes());
+				this.affichage.afficherPlateau(this.plateau);				
 			}
-			System.out.println("nombre Coups=" + nbCoups);
 		}
 	}
 
