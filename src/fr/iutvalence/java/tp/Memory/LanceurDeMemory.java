@@ -16,7 +16,8 @@ public class LanceurDeMemory
 	public static void main(String[] args) 
 	{
 		System.out.println("Creation de la partie");
-		Memory partie = new Memory("Antoine","Eddy");
+		Joueur[] joueurs = new Joueur[] {new JoueurAleatoire("Antoine"), new JoueurAleatoire("Eddy")};
+		Memory partie = new Memory(joueurs);
 		System.out.println("Demarrage de la partie");
 		System.out.println(partie.toString());
 		partie.jouer();

@@ -1,12 +1,7 @@
 package fr.iutvalence.java.tp.Memory;
 
 /**
- * Definition d'une carte de jeu Memory :
- * -La face sur laquelle elle est posÈe
- * -Son identifiant
- * -Si elle a ÈtÈ trouvee ou non
- * -
- * 
+ * Repr√©sente une carte du jeu Memory
  * @author Weissend/Lacoste
  * 
  */
@@ -23,18 +18,17 @@ public class Carte
 	 * -true si la carte est face visible
 	 */
 	private boolean estFaceRetournee;
-	
-	/**
-	 * Vrai si la carte a ete trouvee
-	 * Faux sinon
-	 */
-	private boolean aEteTrouvee;
 
 	/**
 	 * Symbole de la carte compris entre 1 et 12 
 	 * car il y a 12 paires
 	 */
-	private int identifiantCarte;
+	private final int symbole;
+	
+	/**
+	 * Indique si la carte a √©t√© trouv√©e
+	 */
+	private boolean aEteTrouvee;
 
 	
 	/**
@@ -46,7 +40,7 @@ public class Carte
 	public Carte(int symbole)
 	{
 		this.estFaceRetournee = FACE_PAR_DEFAUT;
-		this.identifiantCarte = symbole;
+		this.symbole = symbole;
 		this.aEteTrouvee = false;
 	}
 
@@ -57,7 +51,7 @@ public class Carte
 	{
 		if (this.aEteTrouvee)
 			return "" + " ";
-		return ""+this.obtenirIdentifiantCarte();
+		return ""+this.obtenirSymbole();
 	}
 
 	/**
@@ -81,12 +75,12 @@ public class Carte
 	}
 
 	/**
-	 * Methode qui permet d'obtenir l'identifiant de la carte
-	 * @return int
+	 * Methode qui permet d'obtenir le symbole de la carte
+	 * @return le symbole
 	 */
-	public int obtenirIdentifiantCarte()
+	public int obtenirSymbole()
 	{
-		return this.identifiantCarte;
+		return this.symbole;
 	}
 
 	/**
@@ -101,7 +95,7 @@ public class Carte
 	 * Methode qui interroge la carte pour savoir si elle a ete trouvee ou non
 	 * @return boolean
 	 */
-	public boolean isAEteTrouvee()
+	public boolean aEteTrouvee()
 	{
 		return this.aEteTrouvee;
 	}

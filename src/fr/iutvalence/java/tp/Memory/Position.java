@@ -10,19 +10,20 @@ public class Position
 	/**
 	 * Indice de la colonne pour une position
 	 */
-	private int indiceColonne;
-	
+	private final int indiceColonne;
+
 	/**
 	 * Indice de la ligne pour une position
 	 */
-	private int indiceLigne;
+	private final int indiceLigne;
 
-	/** 
+	/**
 	 * Constructeur de Position
-	 * @param indiceLigne 
-	 * Indice de la ligne
-	 * @param indiceColonne 
-	 * Indice de la colonne
+	 * 
+	 * @param indiceLigne
+	 *            Indice de la ligne
+	 * @param indiceColonne
+	 *            Indice de la colonne
 	 */
 	public Position(int indiceLigne, int indiceColonne)
 	{
@@ -30,45 +31,50 @@ public class Position
 		this.indiceLigne = indiceLigne;
 	}
 
-	/** 
+	/**
 	 * Methode qui permet d'obtenir l'indice colonne
-	 * @return int
-	 * Renvoi de l'indice colonne
+	 * 
+	 * @return int Renvoi de l'indice colonne
 	 */
 	public int obtenirIndiceColonne()
 	{
 		return this.indiceColonne;
 	}
 
- 
 	/**
-	 *Methode qui permet d'obtenir l'indice ligne
-	 * @return int
-	 * Renvoi de l'indice colonne
+	 * Methode qui permet d'obtenir l'indice ligne
+	 * 
+	 * @return int Renvoi de l'indice colonne
 	 */
 	public int obtenirIndiceLigne()
 	{
 		return this.indiceLigne;
 	}
 
-	/** 
-	 * Redefinition de la m�thode toString pour pouvoir afficher une position
+	/**
+	 * Redefinition de la méthode toString pour pouvoir afficher une position
 	 */
 	public String toString()
 	{
-		return "Position [indiceColonne=" + this.indiceColonne + ", indiceLigne=" + this.indiceLigne + "]";
+		return "Position [indiceColonne=" + this.indiceColonne
+				+ ", indiceLigne=" + this.indiceLigne + "]";
 	}
+
 	
+	// TODO ce n'est pas une redéfinition ! (signature)
 	/**
-	 * Redefinition de la methode equals pour comparer 2 position 
+	 * Redefinition de la methode equals pour comparer 2 position
+	 * 
 	 * @param carte
-	 * Carte a la position donnee que l'on veut comparer
+	 *            Carte a la position donnee que l'on veut comparer
 	 * @return boolean
 	 */
-	public boolean equals(Position carte){
-		if ((this.indiceColonne==carte.indiceColonne) && (this.indiceLigne== carte.indiceLigne))
+	public boolean equals(Position carte)
+	{
+		if ((this.indiceColonne == carte.indiceColonne)
+				&& (this.indiceLigne == carte.indiceLigne))
 			return true;
 		return false;
-		
+
 	}
 }

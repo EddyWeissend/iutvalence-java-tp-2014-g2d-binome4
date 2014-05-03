@@ -141,7 +141,7 @@ public class Plateau
 	 */
 	public int getIdentifiantCarte(Position carte)
 	{
-		return this.cartes[carte.obtenirIndiceLigne()][carte.obtenirIndiceColonne()].obtenirIdentifiantCarte();
+		return this.cartes[carte.obtenirIndiceLigne()][carte.obtenirIndiceColonne()].obtenirSymbole();
 	}
 
 	/**
@@ -156,9 +156,9 @@ public class Plateau
 	 * Methode qui verifie si les cartes choisies sont differentes ou si elles ont deja ete trouvees
 	 *
 	 * @param carte1
-	 * Première carte choisie a la position passee en parametre
+	 * Premiï¿½re carte choisie a la position passee en parametre
 	 * @param carte2
-	 * Deuxième carte choisie a la position passee en parametre
+	 * Deuxiï¿½me carte choisie a la position passee en parametre
 	 * @return boolean
 	 */
 	public boolean positionsCoherentes(Position carte1, Position carte2)
@@ -166,9 +166,9 @@ public class Plateau
 		
 		if(carte1.equals(carte2))
 			return false;
-		if (this.cartes[carte1.obtenirIndiceLigne()][carte1.obtenirIndiceColonne()].isAEteTrouvee())
+		if (this.cartes[carte1.obtenirIndiceLigne()][carte1.obtenirIndiceColonne()].aEteTrouvee())
 			return false;
-		if (this.cartes[carte2.obtenirIndiceLigne()][carte2.obtenirIndiceColonne()].isAEteTrouvee())
+		if (this.cartes[carte2.obtenirIndiceLigne()][carte2.obtenirIndiceColonne()].aEteTrouvee())
 			return false;
 		return true;
 	}
