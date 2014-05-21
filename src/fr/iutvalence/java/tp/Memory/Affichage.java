@@ -11,5 +11,7 @@ public interface Affichage
 	public void afficherDebutPartie();
 
 	public void afficherPlateau(Plateau plateau);
+	
+	public void retournerCarte(Position position);
 
 }

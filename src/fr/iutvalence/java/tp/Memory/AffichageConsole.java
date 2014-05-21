@@ -27,4 +27,11 @@ public class AffichageConsole implements Affichage
 
 	}
 
+	@Override
+	public void retournerCarte(Position position)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
 }

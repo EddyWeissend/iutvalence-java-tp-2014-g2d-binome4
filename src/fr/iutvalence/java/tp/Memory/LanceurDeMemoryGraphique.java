@@ -18,8 +18,10 @@ public class LanceurDeMemoryGraphique
 	public static void main(String[] args) 
 	{	
 		Joueur[] joueurs = new Joueur[] {new JoueurAleatoire("Antoine"), new JoueurAleatoire("Eddy")};
-		SwingUtilities.invokeLater(new TacheAffichageFenetre());
-		Memory partie = new Memory(joueurs, new TacheAffichageFenetre());
+		TacheAffichageFenetre ihm = new TacheAffichageFenetre();
+		Memory partie = new Memory(joueurs, ihm);
+		
+		SwingUtilities.invokeLater(ihm);
 		partie.jouer();
 		
 	}

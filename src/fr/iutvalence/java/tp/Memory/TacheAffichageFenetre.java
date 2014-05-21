@@ -23,10 +23,10 @@ import javax.swing.JPanel;
 
 /**
  * @author EDDY
- * Tache d'affichage dans une fenêtre
+ * Tache d'affichage dans une fenï¿½tre
  *
  */
-public class TacheAffichageFenetre implements Affichage, Runnable, ActionListener
+public class TacheAffichageFenetre implements Affichage, Runnable, ActionListener, Joueur
 {
 
 	
@@ -39,59 +39,50 @@ public class TacheAffichageFenetre implements Affichage, Runnable, ActionListene
 	private JMenuItem menuItemRegles;
 	
 	
-	@Override
+
 	public void run()
 	{
-		this.fenetre= new JFrame();
-		this.fenetre.setSize(580, 600);
-		this.fenetre.setTitle("Memory");
-		this.fenetre.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
-	
-		JMenuBar barreDeMenu = new JMenuBar();
-
-		JMenu menu = new JMenu("Menu");
-		JMenu aPropos = new JMenu("A Propos");
-		
-		
-		this.menuItemAPropos = new JMenuItem("Informations");
-		this.menuItemAPropos.addActionListener(this);
-		aPropos.add(this.menuItemAPropos);
-		
-		this.menuItemRegles = new JMenuItem("Règles du jeu");
-		this.menuItemRegles.addActionListener(this);
-		menu.add(this.menuItemRegles);
-		
-		this.menuItemFermer = new JMenuItem("Fermer");
-		this.menuItemFermer.addActionListener(this);
-		menu.add(this.menuItemFermer);
-		
-		barreDeMenu.add(menu);
-		barreDeMenu.add(aPropos);
-		
-		this.fenetre.setJMenuBar(barreDeMenu);
-		
-		Container grille = this.fenetre.getContentPane();	
-		GridLayout dispositionGrille = new GridLayout(4,6,10,10);		
-		grille.setLayout(dispositionGrille);
-		for(int i=0; i<24; i++)
-			grille.add(new JButton(new ImageIcon("image/hs.jpg")));
-		
-		
-		this.fenetre.setVisible(true);
+		this.afficherDebutPartie();
 	}
 
 	@Override
 	public void afficherDebutPartie()
 	{
-		// TODO Auto-generated method stub
+		this.fenetre= new JFrame();
+		this.fenetre.setSize(580, 600);
+		this.fenetre.setTitle("Memory");
+		this.fenetre.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);	
+		JMenuBar barreDeMenu = new JMenuBar();
+		JMenu menu = new JMenu("Menu");
+		JMenu aPropos = new JMenu("A Propos");		
+		this.menuItemAPropos = new JMenuItem("Informations");
+		this.menuItemAPropos.addActionListener(this);
+		aPropos.add(this.menuItemAPropos);		
+		this.menuItemRegles = new JMenuItem("Regles du jeu");
+		this.menuItemRegles.addActionListener(this);
+		menu.add(this.menuItemRegles);		
+		this.menuItemFermer = new JMenuItem("Fermer");
+		this.menuItemFermer.addActionListener(this);
+		menu.add(this.menuItemFermer);		
+		barreDeMenu.add(menu);
+		barreDeMenu.add(aPropos);		
+		this.fenetre.setJMenuBar(barreDeMenu);		
+		JPanel grille = new JPanel();
+		GridLayout dispositionGrille = new GridLayout(4,6,10,10);		
+		grille.setLayout(dispositionGrille);
 		
+		for(int i=0; i<4; i++)
+			for (int j=0; j<6;j++)
+				grille.add(new BoutonCarte(new Position (i,j),new ImageIcon("image/hs.jpg")));
+
+		this.fenetre.setContentPane(grille);
+		this.fenetre.setVisible(true);
 	}
 
 	@Override
 	public void afficherPlateau(Plateau plateau)
 	{
-		// TODO Auto-generated method stub
-		
+				
 	}
 
 	@Override
@@ -101,7 +92,7 @@ public class TacheAffichageFenetre implements Affichage, Runnable, ActionListene
 
 		if (itemSelectionne == this.menuItemAPropos)
 		{
-			JOptionPane.showMessageDialog(this.fenetre, "Jeu de Memory crée par Eddy et Antoine Copyright 2014", "A propos", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(this.fenetre, "Jeu de Memory cree par Eddy et Antoine Copyright 2014", "A propos", JOptionPane.INFORMATION_MESSAGE);
 			return;
 		}
 
@@ -114,10 +105,33 @@ public class TacheAffichageFenetre implements Affichage, Runnable, ActionListene
 		
 		if (itemSelectionne == this.menuItemRegles)
 		{
-		
-			JOptionPane.showMessageDialog(this.fenetre, "Choisissez deux cartes parmi celles restantes sur le plateau et formé des paires jusqu'a ne plus avoir de carte sur le plateau.", "Règles du Memory", JOptionPane.INFORMATION_MESSAGE);
+			JOptionPane.showMessageDialog(this.fenetre, "Choisissez deux cartes parmi celles restantes sur le plateau et forme des paires jusqu'a ne plus avoir de carte sur le plateau.", "Rï¿½gles du Memory", JOptionPane.INFORMATION_MESSAGE);
 			return;
 		}
 	}
 
+
+	public Position[] choisirCartes(int nombreDeLignes, int nombreDeColonnes)
+	{
+
+		return null;
+	}
+
+
+	public void incrementerNombreDePairesTrouvees()
+	{
+		
+	}
+
+
+	public int obtenirNombreDePairesTrouvees()
+	{
+
+		return 0;
+	}
+	
+	
+	public void retournerCarte(Position position){
+		
+}
 }
