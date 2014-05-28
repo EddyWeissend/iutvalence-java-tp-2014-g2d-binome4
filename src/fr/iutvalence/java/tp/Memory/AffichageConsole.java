@@ -34,4 +34,11 @@ public class AffichageConsole implements Affichage
 		
 	}
 
+	@Override
+	public void desactiverCarte(Position carte1)
+	{
+		// TODO Auto-generated method stub
+		
+	}
+
 }

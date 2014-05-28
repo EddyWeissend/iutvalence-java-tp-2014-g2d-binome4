@@ -54,9 +54,10 @@ public class Memory
 			{
 				this.jouerTour(joueurCourant);
 				joueurCourant = this.joueurs[(indiceJoueurCourant + 1) % 2];
-				this.affichage.afficherPlateau(this.plateau);				
+				this.affichage.afficherPlateau(this.plateau);		
 			}
 		}
+		this.affichage.afficherFinPartie();
 	}
 
 	/**
@@ -96,14 +97,18 @@ public class Memory
 				.getIdentifiantCarte(carte2))
 		{
 			this.plateau.enleverCarte(carte1);
+			this.affichage.desactiverCarte(carte1);
 			this.plateau.enleverCarte(carte2);
+			this.affichage.desactiverCarte(carte2);
 			joueur.incrementerNombreDePairesTrouvees();
 			this.plateau.decrementerNombreDeCartesPresentes();
 			return true;
 		}
 
 		this.plateau.retournerCarte(carte1);
+		this.affichage.retournerCarte(carte1);
 		this.plateau.retournerCarte(carte2);
+		this.affichage.retournerCarte(carte2);
 		return false;
 	}
 
@@ -150,12 +155,13 @@ public class Memory
 		{
 			cartesChoisiesPendantCeTourIntermediaire = this
 					.choisirCartes(joueur);
-			if (i == 250)
-			{
-				System.out.println(".");
-			}
 		}
 
 		return cartesChoisiesPendantCeTourIntermediaire;
 	}
-}
+
+
+	public Plateau getPlateau(){
+		return this.plateau;
+		}
+	}

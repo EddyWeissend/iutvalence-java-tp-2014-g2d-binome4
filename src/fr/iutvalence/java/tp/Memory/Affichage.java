@@ -14,4 +14,8 @@ public interface Affichage
 	
 	public void retournerCarte(Position position);
 
+	public void desactiverCarte(Position carte1);
+	
+	public void afficherFinPartie();
+
 }

@@ -13,30 +13,43 @@ public class BoutonCarte extends JButton implements ActionListener
 	
 	private Position position;
 	
-	public BoutonCarte(Position position, ImageIcon image){
+	private int symbole;
+	
+	public BoutonCarte(Position position, ImageIcon image, ActionListener auditeur, int symboleCarte){
 		super(image);
 		this.position=position;
-		this.addActionListener(this);
+		this.addActionListener(auditeur);
+		this.symbole=symboleCarte;
 	}
 
  
 	public void actionPerformed(ActionEvent event)
 	{
-		this.retournerCarte();
 		this.getPosition();
 	}
 
 
-	private void retournerCarte()
+	public void retournerCarte()
 	{
-		this.;		
+		if (this.getIcon()==null)
+			this.setIcon(new ImageIcon("image/hs.jpg"));
+		else{
+			this.setIcon(null);
+			this.setText(""+this.symbole);
+		}
 	}
 
 
-	private Position getPosition()
+	public Position getPosition()
 	{
 		return this.position;
 		
+	}
+
+
+	public void desactiver()
+	{
+		this.setEnabled(false);
 	}
 
 }

@@ -77,4 +77,12 @@ public class Position
 		return false;
 
 	}
+	
+	public int getIndiceLigne(){
+		return this.indiceLigne;
+	}
+	
+	public int getIndiceColonne(){
+		return this.indiceColonne;
+	}
 }

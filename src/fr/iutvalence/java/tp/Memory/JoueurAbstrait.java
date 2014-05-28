@@ -25,6 +25,11 @@ public abstract class JoueurAbstrait implements Joueur
 	{
 		this.nom = nom;
 	}
+	
+	public  Position[] choisirCartes(int nombreDeLignes,int nombreDeColonnes){
+		
+		
+	}
 
 	
 	public void incrementerNombreDePairesTrouvees()
